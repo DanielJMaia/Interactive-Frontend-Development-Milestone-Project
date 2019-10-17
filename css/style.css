@@ -4,6 +4,10 @@
     background-color: #f8f9fa;
 }
 
+.deckgrid-container {
+    padding-top: 50px;
+}
+
 /*navigation*/
 
 #navbar {
@@ -28,9 +32,32 @@
 
 /*footer*/
 
-/*individual sections*/
+/*inventory*/
+
+.deckgrid {
+    min-height: 200px;
+}
+
+.inventory-filters {
+    height: 150px;
+}
+
+
+/*Decklist*/
+
+
 
 /*other?*/
+
+
+
+
+
+
+
+
+
+
 
 /* Small devices (landscape phones, 576px and up) */
 
