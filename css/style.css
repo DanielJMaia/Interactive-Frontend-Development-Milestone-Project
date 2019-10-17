@@ -1,0 +1,57 @@
+/*container styling*/
+
+.container-fluid {
+    background-color: #f8f9fa;
+}
+
+/*navigation*/
+
+#navbar {
+    background-color: #f8f9fa;
+}
+
+/*headers*/
+
+/*body*/
+
+.searchbar {
+    height: 500px;
+}
+
+.quick-access-header {
+    height: 150px;
+}
+
+.quick-access-row {
+    height: 250px;
+}
+
+/*footer*/
+
+/*individual sections*/
+
+/*other?*/
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    .quick-access-content {
+        padding: 20px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+    .quick-access-content {
+        padding: 50px;
+    }
+}
