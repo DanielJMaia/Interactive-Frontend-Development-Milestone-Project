@@ -1,6 +1,9 @@
+   const baseURL = "https://api.magicthegathering.io/"
+   
    function getData(type, cb) {
        var xhr = new XMLHttpRequest();
-       xhr.open("GET", "https://api.magicthegathering.io/v1/cards/1");
+       
+       xhr.open("GET", baseURL + type);
        xhr.send();
 
        xhr.onreadystatechange = function() {
@@ -12,6 +15,7 @@
    
    function writeToDocument(type) {
        getData(type, function(data) {
-           document.getElementById("data").innerHTML = data;
-       })
+           console.dir(data.card.name);
+           document.getElementById("data").innerHTML = data.card.name;
+       });
    }
