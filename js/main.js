@@ -13,9 +13,16 @@
        };
    }
    
-   function writeToDocument(type) {
+   function writeIdToDocument(type) {
        getData(type, function(data) {
-           console.dir(data.card.name);
-           document.getElementById("data").innerHTML = data.card.name;
+           console.dir(data);
+           document.getElementById("data").innerHTML = data.card.artist;
+       });
+   }
+   
+   function writeNameToDocument(type) {
+       getData(type, function(data) {
+           console.dir(data);
+           document.getElementById("data").innerHTML = data.cards[0].cmc;
        });
    }
