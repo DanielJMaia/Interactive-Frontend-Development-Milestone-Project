@@ -33,7 +33,7 @@
        // This line retrieves the value of the user input i.e. the card ID and prints it to console for debugging
        var idValue = document.getElementById("cardId").value;
        console.log(idValue);
-       document.getElementById("buttonId").onclick = writeIdToDocument`('v1/cards/${idValue}')`;
+       document.getElementById("buttonId").onclick = writeIdToDocument(`v1/cards/${idValue}`);
      
    }
    
