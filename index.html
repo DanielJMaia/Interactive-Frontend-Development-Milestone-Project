@@ -11,7 +11,7 @@
         <!--This div works by grabbing the card ID and retrieving whatever is needed-->
         <input type="text" id="cardId" />
         <!-- <button onclick="writeIdToDocument('v1/cards/386616')">Retrieve Name From ID</button> -->
-        <button id="buttonId" onclick="grabId()">Grab ID Value</button>
+        <button id="buttonId" onclick="grabId()">Get Name From ID</button>
     </div>
 
 
@@ -21,7 +21,8 @@
     <div id="retrieveWithName">
         <!--This div works by grabbing the card name or part of the name to retrieve data-->
         <input type="text" id="cardName" />
-        <button id="buttonName" onclick="writeNameToDocument('v1/cards?name=Narset,%20Enlightened%20Master')">Retrieve CMC From Name</button>
+        <!--<button id="buttonName" onclick="writeNameToDocument('v1/cards?name=Narset,%20Enlightened%20Master')">Retrieve CMC From Name</button>-->
+        <button id="buttonName" onclick="grabName()">Grab CMC From Name</button>
     </div>
     <!--This div receives the data-->
     <div id="data"></div>
