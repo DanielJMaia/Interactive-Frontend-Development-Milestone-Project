@@ -7,9 +7,27 @@
 </head>
 
 <body>
-    <button onclick="writeIdToDocument('v1/cards/386616')">ID - Retrieve Narset, Enlightened Master Artist Name</button>
-    <button onclick="writeNameToDocument('v1/cards?name=Narset,%20Enlightened%20Master')">Name - Retrieve Narset, Enlightened Master Artist Name</button>
+    <div id="retrieveWithId">
+        <!--This div works by grabbing the card ID and retrieving whatever is needed-->
+         <input type="text" id="cardId" />
+         <!-- <button onclick="writeIdToDocument('v1/cards/386616')">Retrieve Name From ID</button> -->
+
+        <button id="buttonId" onclick="grabId()">Grab ID Value</button>
+    </div>
+
+
+
+
+
+    <div id="retrieveWithName">
+        <!--This div works by grabbing the card name or part of the name to retrieve data-->
+        <input type="text" id="cardName" />
+        <button id="buttonName" onclick="writeNameToDocument('v1/cards?name=Narset,%20Enlightened%20Master')">Retrieve CMC From Name</button>
+    </div>
+
     <div id="data"></div>
+    <!--This div receives the data-->
+
 </body>
 <script type="text/javascript" src="js/main.js"></script>
 
