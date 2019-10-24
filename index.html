@@ -2,33 +2,81 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Magic Builder</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
 
 </head>
 
 <body>
-    <div id="retrieveWithId">
-        <!--This div works by grabbing the card ID and retrieving whatever is needed-->
-        <input type="text" id="cardId" />
-        <!-- <button onclick="writeIdToDocument('v1/cards/386616')">Retrieve Name From ID</button> -->
-        <button id="buttonId" onclick="grabId()">Get Name From ID</button>
+
+
+    <!-- Dropdown Menu -->
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary dropdown-toggle searchButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Condition</button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Name</a>
+                <a class="dropdown-item" href="#">Type</a>
+                <a class="dropdown-item" href="#">CMC</a>
+                <div role="separator" class="dropdown-divider"></div>
+            </div>
+        </div>
+        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+    </div>
+
+    <!--Buttons and inputs-->
+
+    <div class="row justify-content-md-center quick-access-row">
+        <div class="col-sm-4 quick-access-content" id="retrieveWithName">
+            <!--This div works by grabbing the card name or part of the name to retrieve data-->
+            <input type="text" id="cardName" />
+            <button type="button" class="btn btn-dark" id="buttonName" onclick="grabName()">Show Cards With That Name</button>
+            <div id="dataName"></div>
+        </div>
+
+        <div class="col-sm-4 quick-access-content" id="retrieveWithType">
+            <!--This div works by grabbing the card name or part of the name to retrieve data-->
+            <input type="text" id="cardType" />
+            <button type="button" class="btn btn-dark" id="buttonName" onclick="grabType()">Show Cards With That Type</button>
+            <div id="dataType"></div>
+        </div>
+        <div class="col-sm-4 quick-access-content" id="retrieveWithId">
+            <!--This div works by grabbing the card ID and retrieving whatever is needed-->
+            <input type="text" id="cardId" />
+            <!-- <button onclick="writeIdToDocument('v1/cards/386616')">Retrieve Name From ID</button> -->
+            <button type="button" class="btn btn-dark" id="buttonId" onclick="grabId()">Get Name From ID</button>
+            <div id="dataId"></div>
+        </div>
     </div>
 
 
 
-
-
-    <div id="retrieveWithName">
-        <!--This div works by grabbing the card name or part of the name to retrieve data-->
-        <input type="text" id="cardName" />
-        <!--<button id="buttonName" onclick="writeNameToDocument('v1/cards?name=Narset,%20Enlightened%20Master')">Retrieve CMC From Name</button>-->
-        <button id="buttonName" onclick="grabName()">Grab CMC From Name</button>
-    </div>
     <!--This div receives the data-->
-    <div id="data"></div>
+
+
+
 
 
 </body>
 <script type="text/javascript" src="js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+    $(function() {
+
+        $(".dropdown-menu a").click(function() {
+
+            $(".btn:first-child").text($(this).text());
+            $(".btn:first-child").val($(this).text());
+
+        });
+
+    });
+</script>
 
 </html>
