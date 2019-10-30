@@ -18,6 +18,10 @@
 
 /*body*/
 
+#mainContent{
+    margin-bottom: 50px;
+}
+
 .searchbar {
     height: 80px;
 }
@@ -32,6 +36,12 @@
 
 .searchButton {
     width: 150px;
+}
+
+.cardImage {
+    position: relative;
+    height: 285px;
+    width: 404px;
 }
 
 /*footer*/

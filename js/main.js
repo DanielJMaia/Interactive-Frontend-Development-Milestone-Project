@@ -70,7 +70,7 @@
 
       getData(type, function(data) {
          console.dir(data);
-
+         document.getElementById("cardImage").style.visibility = "visible";
          document.getElementById("cardMain").style.visibility = "visible";
          //     var i = 0;
          //     for (i = 0; i < 100; i++) {
