@@ -27,71 +27,46 @@
       return `<tr>${tableHeaders}</tr>`;
    }
 
-   //Retrieval Functions //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   //Trigger grabname() on enter click/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+   var enterClick = document.getElementById("cardName");
+   enterClick.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+         event.preventDefault();
+         grabName();
+      }
+   });
+
+   //Retrieval Functions //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
    function grabName() {
       var nameValue = document.getElementById("cardName").value;
       console.log(nameValue);
       writeNameToDocument(`v1/cards?name=${nameValue}`);
+
    }
 
    function writeNameToDocument(type) {
       var el = document.getElementById("dataName");
       el.innerHTML = "";
-      
+
       getData(type, function(data) {
          console.dir(data);
 
-         var i = 0;
-         for (i = 0; i < 10; i++) {
-            document.getElementById("dataName").innerHTML += "<p>" + data.cards[i].name + "</p>";
-            document.getElementById("dataName").innerHTML += "<p>" + data.cards[i].artist + "</p>";
-            document.getElementById("dataName").innerHTML += "<p>" + data.cards[i].manaCost + "</p>";
-            document.getElementById("dataName").innerHTML += "<p>" + data.cards[i].originalText + "</p><br>";
-         }
 
-      });
-   }
-
-
-
-   function grabType() {
-      var typeValue = document.getElementById("cardType").value;
-      console.log(typeValue);
-      writeTypeToDocument(`v1/cards?types=${typeValue}`);
-   }
-
-   function writeTypeToDocument(type) {
-      var el = document.getElementById("dataType");
-      el.innerHTML = "";
-      getData(type, function(data) {
-         console.dir(data);
-
-         var i = 0;
-         for (i = 0; i < 10; i++) {
-            document.getElementById("dataType").innerHTML += "<p>" + data.cards[i].name + "</p>";
-            document.getElementById("dataType").innerHTML += "<p>" + data.cards[i].artist + "</p>";
-            document.getElementById("dataType").innerHTML += "<p>" + data.cards[i].manaCost + "</p>";
-            document.getElementById("dataType").innerHTML += "<p>" + data.cards[i].originalText + "</p><br>";
-         }
+    //     var i = 0;
+    //     for (i = 0; i < 100; i++) {
+            document.getElementById("cardTitle").innerHTML +=data.cards[0].name;
+            document.getElementById("cardType").innerHTML +="Type: " + data.cards[0].originalType;
+            document.getElementById("cardCost").innerHTML +="Cost: " + data.cards[0].manaCost;
+            document.getElementById("cardText").innerHTML +="Card Text: " + data.cards[0].text;
+            document.getElementById("cardFlavour").innerHTML +="Flavour Text: " + data.cards[0].flavor;
+            document.getElementById("cardRarity").innerHTML +="Rarity: " + data.cards[0].rarity;
+            document.getElementById("cardPower").innerHTML +="P/T: " + data.cards[0].power + " / " + data.cards[0].toughness;
+            document.getElementById("cardArtist").innerHTML +="Artist: " + data.cards[0].artist;
+            document.getElementById("cardSet").innerHTML +="Set Name: " + data.cards[0].setName;
+  //       }
 
       });
    }
    
-   
-   
-   function grabId() {
-      // This line retrieves the value of the user input i.e. the card ID and prints it to console for debugging
-      var idValue = document.getElementById("cardId").value;
-      console.log(idValue);
-      writeIdToDocument(`v1/cards/${idValue}`);
-   }
-
-   function writeIdToDocument(type) {
-      var el = document.getElementById("dataId");
-      el.innerHTML = "";
-      getData(type, function(data) {
-         console.dir(data);
-         document.getElementById("dataId").innerHTML += "<p>" + data.card.name + "</p>";
-      });
-   }
