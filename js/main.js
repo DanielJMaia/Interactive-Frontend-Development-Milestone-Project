@@ -57,6 +57,7 @@
       var innerId6 = document.getElementById("cardPower");
       var innerId7 = document.getElementById("cardArtist");
       var innerId8 = document.getElementById("cardSet");
+      
       innerId.innerHTML = "";
       innerId1.innerHTML = "";
       innerId2.innerHTML = "";
@@ -82,6 +83,7 @@
          document.getElementById("cardPower").innerHTML += "P/T: " + data.cards[0].power + " / " + data.cards[0].toughness;
          document.getElementById("cardArtist").innerHTML += "Artist: " + data.cards[0].artist;
          document.getElementById("cardSet").innerHTML += "Set Name: " + data.cards[0].setName;
+         document.getElementById("cardImage").src = data.cards[0].imageUrl;
          //       }
 
       });
