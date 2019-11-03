@@ -47,7 +47,9 @@
    }
 
    function writeNameToDocument(type) {
-      
+
+
+      // Clearing the innerHTML of new results so that they don't keep adding on when a new card is inputted
       var innerId = document.getElementById("cardTitle");
       var innerId1 = document.getElementById("cardType");
       var innerId2 = document.getElementById("cardCost");
@@ -58,7 +60,7 @@
       var innerId7 = document.getElementById("cardArtist");
       var innerId8 = document.getElementById("cardSet");
       
-      innerId.innerHTML = "";
+      innerId.innerHTML = `<img src="images/loader.gif">`;
       innerId1.innerHTML = "";
       innerId2.innerHTML = "";
       innerId3.innerHTML = "";
@@ -68,13 +70,15 @@
       innerId7.innerHTML = "";
       innerId8.innerHTML = "";
 
+      // Filling the card data
+
       getData(type, function(data) {
          console.dir(data);
          document.getElementById("cardImage").style.visibility = "visible";
          document.getElementById("cardMain").style.visibility = "visible";
          //     var i = 0;
          //     for (i = 0; i < 100; i++) {
-         document.getElementById("cardTitle").innerHTML += data.cards[0].name;
+         document.getElementById("cardTitle").innerHTML = data.cards[0].name;
          document.getElementById("cardType").innerHTML += "Type: " + data.cards[0].originalType;
          document.getElementById("cardCost").innerHTML += "Cost: " + data.cards[0].manaCost;
          document.getElementById("cardText").innerHTML += "Card Text: " + data.cards[0].text;
