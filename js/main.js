@@ -15,17 +15,7 @@
       };
    }
 
-   //Generate Table Headers //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-   function getTableHeaders(obj) {
-      var tableHeaders = [];
-
-      Object.keys(obj).forEach(function(key) {
-         tableHeaders.push(`<td>${key}</td>`);
-      });
-
-      return `<tr>${tableHeaders}</tr>`;
-   }
+ 
 
    //Trigger grabname() on enter click/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
