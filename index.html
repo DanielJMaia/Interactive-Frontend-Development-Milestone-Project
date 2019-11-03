@@ -24,6 +24,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
+                        <li class="nav-item" id="retrieveWithName">
+                            <input type="text" class="form-control" id="cardName" placeholder="Search For Cards" />
+                        </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                         </li>
@@ -39,22 +42,26 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Forums?</a>
                         </li>
+
                     </ul>
                 </div>
             </nav>
         </div>
 
-        <!-- Search Bar -->
+        <!-- Search Bar
 
         <div class="row justify-content-md-center searchbar">
             <div class="row justify-content-md-center quick-access-row">
                 <div class="col-sm-4 quick-access-content" id="retrieveWithName">
-                    <!--This div works by grabbing the card name or part of the name to retrieve data-->
+                    
                     <input type="text" id="cardName" placeholder="Enter Card Name!" />
 
                 </div>
             </div>
         </div>
+      
+        -->
+
 
         <!-- Search Results -->
 
@@ -81,20 +88,7 @@
         </div>
         <!-- Quick Access Menu -->
 
-        <div class="row justify-content-md-center quick-access-row">
-            <div class="col-sm-4 quick-access-content" align="center">
-                <h2>My Inventory</h2>
-                <span></span>
-            </div>
-            <div class="col-sm-4 quick-access-content" align="center">
-                <h2>My Decks</h2>
-                <span></span>
-            </div>
-            <div class="col-sm-4 quick-access-content" align="center">
-                <h2>Community Decks</h2>
-                <span></span>
-            </div>
-        </div>
+
     </div>
 </body>
 <script type="text/javascript" src="js/main.js"></script>
