@@ -12,7 +12,7 @@
 <body>
 
 
-<div class="col-6" align="left" id="cardBody">
+<div class="row" id="cardData">
 
 </div>
 
@@ -27,14 +27,57 @@ function createDiv() {
   card.setAttribute("class", "card");
   card.setAttribute("id", "cardMain");
   card.setAttribute("style", "width: 18rem; visibility: hidden;");
+  
   var body = document.createElement("div");
-  body.setAttribute()
+  body.setAttribute("class", "card-body");
+  
   var header = document.createElement("h5");
-  var paragraph = document.createElement("p");
+  header.setAttribute("class", "card-title");
+  header.setAttribute("id", "cardTitle");
+  
+  var paragraphType = document.createElement("p");
+  paragraphType.setAttribute("class", "card-text");
+  paragraphType.setAttribute("id", "cardType");
+  
+  var paragraphCost = document.createElement("p");
+  paragraphCost.setAttribute("class", "card-text");
+  paragraphCost.setAttribute("id", "cardCost");
+  
+  var paragraphText = document.createElement("p");
+  paragraphText.setAttribute("class", "card-text");
+  paragraphText.setAttribute("id", "cardText");
+  
+  var paragraphFlavour = document.createElement("p");
+  paragraphFlavour.setAttribute("class", "card-text");
+  paragraphFlavour.setAttribute("id", "cardFlavour");
+  
+  var paragraphRarity = document.createElement("p");
+  paragraphRarity.setAttribute("class", "card-text");
+  paragraphRarity.setAttribute("id", "cardRarity");
+  
+  var paragraphPower = document.createElement("p");
+  paragraphPower.setAttribute("class", "card-text");
+  paragraphPower.setAttribute("id", "cardPower");
+  
+  var paragraphArtist = document.createElement("p");
+  paragraphArtist.setAttribute("class", "card-text");
+  paragraphArtist.setAttribute("id", "cardArtist");
+  
+  var paragraphSet = document.createElement("p");
+  paragraphSet.setAttribute("class", "card-text");
+  paragraphSet.setAttribute("id", "cardSet");
+  
   body.appendChild(header);
-  body.appendChild(paragraph);
+  body.appendChild(paragraphType);
+  body.appendChild(paragraphCost);
+  body.appendChild(paragraphText);
+  body.appendChild(paragraphFlavour);
+  body.appendChild(paragraphRarity);
+  body.appendChild(paragraphPower);
+  body.appendChild(paragraphArtist);
+  body.appendChild(paragraphSet);
   card.appendChild(body);
-  document.getElementById("cardBody").appendChild(card);
+  document.getElementById("cardData").appendChild(card);
 }
 </script>
 
