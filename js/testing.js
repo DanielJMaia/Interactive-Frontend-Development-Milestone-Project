@@ -1,3 +1,15 @@
+var cars = 'Saab,Volvo,BMW,GMC,Nissan,Ford'.split(',');
+for (var c in cars) {
+    var newElement = document.createElement('div');
+    newElement.id = cars[c]; newElement.className = "car";
+    newElement.innerHTML = cars[c];
+    document.body.appendChild(newElement);
+}
+
+
+///////////////////////////
+
+
    //Get Data From API //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
    const baseURL = "https://api.magicthegathering.io/"
@@ -68,6 +80,7 @@
          document.getElementById("cardImage").style.visibility = "visible";
          document.getElementById("cardMain").style.visibility = "visible";
          var i = 0;
+         var string = "";
          for (i = 0; i < 100; i++) {
             document.getElementById("cardTitle").innerHTML = data.cards[i].name;
             document.getElementById("cardType").innerHTML += "Type: " + data.cards[i].originalType;
