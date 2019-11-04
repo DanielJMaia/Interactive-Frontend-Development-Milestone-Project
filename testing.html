@@ -9,80 +9,94 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
+
 <body>
 
+    <div class="row" id="cardData">
 
-<div class="row" id="cardData">
+    </div>
 
-</div>
+    <p>Click the button to append an item to the end of the list.</p>
 
-<p>Click the button to append an item to the end of the list.</p>
+    <button onclick="createDiv()">Try it</button>
 
-<button onclick="createDiv()">Try it</button>
+    <script>
+        function createDiv() {
+            var imageDiv = document.createElement("div");
+            imageDiv.setAttribute("class", "col-6");
+            imageDiv.setAttribute("align", "right");
+            imageDiv.setAttribute("style","visibility: hidden;");
+            
+            var imageSrc = document.createElement("img");
+            imageSrc.setAttribute("class", "img-fluid");
+            imageSrc.setAttribute("id", "cardImage");
+            imageSrc.setAttribute("src", "");
+            imageSrc.setAttribute("alt", "Card Image Not Available");
 
-<script>
+            var card = document.createElement("div");
+            card.setAttribute("class", "card");
+            card.setAttribute("id", "cardMain");
+            card.setAttribute("style", "width: 18rem; visibility: hidden;");
 
-function createDiv() {
-  var card = document.createElement("div");
-  card.setAttribute("class", "card");
-  card.setAttribute("id", "cardMain");
-  card.setAttribute("style", "width: 18rem; visibility: hidden;");
-  
-  var body = document.createElement("div");
-  body.setAttribute("class", "card-body");
-  
-  var header = document.createElement("h5");
-  header.setAttribute("class", "card-title");
-  header.setAttribute("id", "cardTitle");
-  
-  var paragraphType = document.createElement("p");
-  paragraphType.setAttribute("class", "card-text");
-  paragraphType.setAttribute("id", "cardType");
-  
-  var paragraphCost = document.createElement("p");
-  paragraphCost.setAttribute("class", "card-text");
-  paragraphCost.setAttribute("id", "cardCost");
-  
-  var paragraphText = document.createElement("p");
-  paragraphText.setAttribute("class", "card-text");
-  paragraphText.setAttribute("id", "cardText");
-  
-  var paragraphFlavour = document.createElement("p");
-  paragraphFlavour.setAttribute("class", "card-text");
-  paragraphFlavour.setAttribute("id", "cardFlavour");
-  
-  var paragraphRarity = document.createElement("p");
-  paragraphRarity.setAttribute("class", "card-text");
-  paragraphRarity.setAttribute("id", "cardRarity");
-  
-  var paragraphPower = document.createElement("p");
-  paragraphPower.setAttribute("class", "card-text");
-  paragraphPower.setAttribute("id", "cardPower");
-  
-  var paragraphArtist = document.createElement("p");
-  paragraphArtist.setAttribute("class", "card-text");
-  paragraphArtist.setAttribute("id", "cardArtist");
-  
-  var paragraphSet = document.createElement("p");
-  paragraphSet.setAttribute("class", "card-text");
-  paragraphSet.setAttribute("id", "cardSet");
-  
-  body.appendChild(header);
-  body.appendChild(paragraphType);
-  body.appendChild(paragraphCost);
-  body.appendChild(paragraphText);
-  body.appendChild(paragraphFlavour);
-  body.appendChild(paragraphRarity);
-  body.appendChild(paragraphPower);
-  body.appendChild(paragraphArtist);
-  body.appendChild(paragraphSet);
-  card.appendChild(body);
-  document.getElementById("cardData").appendChild(card);
-}
-</script>
+            var body = document.createElement("div");
+            body.setAttribute("class", "card-body");
 
-<p><strong>Note:</strong><br>First create the card node, then body, header and paragraph.<br> Then append the paragraph to header, header to body and body to card. .</p>
+            var header = document.createElement("h5");
+            header.setAttribute("class", "card-title");
+            header.setAttribute("id", "cardTitle");
+
+            var paragraphType = document.createElement("p");
+            paragraphType.setAttribute("class", "card-text");
+            paragraphType.setAttribute("id", "cardType");
+
+            var paragraphCost = document.createElement("p");
+            paragraphCost.setAttribute("class", "card-text");
+            paragraphCost.setAttribute("id", "cardCost");
+
+            var paragraphText = document.createElement("p");
+            paragraphText.setAttribute("class", "card-text");
+            paragraphText.setAttribute("id", "cardText");
+
+            var paragraphFlavour = document.createElement("p");
+            paragraphFlavour.setAttribute("class", "card-text");
+            paragraphFlavour.setAttribute("id", "cardFlavour");
+
+            var paragraphRarity = document.createElement("p");
+            paragraphRarity.setAttribute("class", "card-text");
+            paragraphRarity.setAttribute("id", "cardRarity");
+
+            var paragraphPower = document.createElement("p");
+            paragraphPower.setAttribute("class", "card-text");
+            paragraphPower.setAttribute("id", "cardPower");
+
+            var paragraphArtist = document.createElement("p");
+            paragraphArtist.setAttribute("class", "card-text");
+            paragraphArtist.setAttribute("id", "cardArtist");
+
+            var paragraphSet = document.createElement("p");
+            paragraphSet.setAttribute("class", "card-text");
+            paragraphSet.setAttribute("id", "cardSet");
+
+            imageDiv.appendChild(imageSrc);
+            body.appendChild(header);
+            body.appendChild(paragraphType);
+            body.appendChild(paragraphCost);
+            body.appendChild(paragraphText);
+            body.appendChild(paragraphFlavour);
+            body.appendChild(paragraphRarity);
+            body.appendChild(paragraphPower);
+            body.appendChild(paragraphArtist);
+            body.appendChild(paragraphSet);
+            card.appendChild(body);
+            
+            
+            document.getElementById("cardData").appendChild(imageDiv);
+            document.getElementById("cardData").appendChild(card);
+        }
+    </script>
+
+    <p><strong>Note:</strong><br>First create the card node, then body, header and paragraph.<br> Then append the paragraph to header, header to body and body to card. .</p>
 
 </body>
+
 </html>
- 
