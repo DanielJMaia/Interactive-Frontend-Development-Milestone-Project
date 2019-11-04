@@ -12,7 +12,7 @@
 
 <body>
 
-    <div class="row" id="cardData">
+    <div class="container-fluid" id="cardData">
 
     </div>
 
@@ -22,8 +22,11 @@
 
     <script>
         function createDiv() {
+            var cardRow = document.createElement("div");
+            cardRow.setAttribute("class", "row");
+            
             var imageDiv = document.createElement("div");
-            imageDiv.setAttribute("class", "col-6");
+            imageDiv.setAttribute("class", "col-6 image");
             imageDiv.setAttribute("align", "right");
             imageDiv.setAttribute("style","visibility: hidden;");
             
@@ -34,7 +37,7 @@
             imageSrc.setAttribute("alt", "Card Image Not Available");
 
             var card = document.createElement("div");
-            card.setAttribute("class", "card");
+            card.setAttribute("class", "col-6 card");
             card.setAttribute("id", "cardMain");
             card.setAttribute("style", "width: 18rem; visibility: hidden;");
 
@@ -76,7 +79,7 @@
             var paragraphSet = document.createElement("p");
             paragraphSet.setAttribute("class", "card-text");
             paragraphSet.setAttribute("id", "cardSet");
-
+            
             imageDiv.appendChild(imageSrc);
             body.appendChild(header);
             body.appendChild(paragraphType);
@@ -89,13 +92,16 @@
             body.appendChild(paragraphSet);
             card.appendChild(body);
             
+            cardRow.appendChild(imageDiv);
+            cardRow.appendChild(card);
             
-            document.getElementById("cardData").appendChild(imageDiv);
-            document.getElementById("cardData").appendChild(card);
+            document.getElementById("cardData").appendChild(cardRow);
+            
+            
         }
     </script>
 
-    <p><strong>Note:</strong><br>First create the card node, then body, header and paragraph.<br> Then append the paragraph to header, header to body and body to card. .</p>
+    <p><strong>Note:</strong><br>First create the card node, then body, header and paragraph.<br> Then append the paragraphs and header to body and body to card. .</p>
 
 </body>
 
