@@ -12,11 +12,8 @@
 <body>
 
 
-<div id="cardMain">
-<div class="cardBody">
-  <h5 id="cardTitle"></h5>
-  <p id="cardCost"></p>
-</div>
+<div class="col-6" align="left" id="cardBody">
+
 </div>
 
 <p>Click the button to append an item to the end of the list.</p>
@@ -24,26 +21,24 @@
 <button onclick="createDiv()">Try it</button>
 
 <script>
-function myFunction() {
-  var node = document.createElement("LI");
-  var textnode = document.createTextNode("Water");
-  node.appendChild(textnode);
-  document.getElementById("myList").appendChild(node);
-}
 
 function createDiv() {
   var card = document.createElement("div");
+  card.setAttribute("class", "card");
+  card.setAttribute("id", "cardMain");
+  card.setAttribute("style", "width: 18rem; visibility: hidden;");
   var body = document.createElement("div");
+  body.setAttribute()
   var header = document.createElement("h5");
   var paragraph = document.createElement("p");
-  header.appendChild(paragraph);
   body.appendChild(header);
+  body.appendChild(paragraph);
   card.appendChild(body);
-  document.getElementById("cardMain").appendChild(card);
+  document.getElementById("cardBody").appendChild(card);
 }
 </script>
 
-<p><strong>Note:</strong><br>First create an LI node,<br> then create a Text node,<br> then append the Text node to the LI node.<br>Finally append the LI node to the list.</p>
+<p><strong>Note:</strong><br>First create the card node, then body, header and paragraph.<br> Then append the paragraph to header, header to body and body to card. .</p>
 
 </body>
 </html>
