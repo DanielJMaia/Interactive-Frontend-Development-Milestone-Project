@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+<body>
+
+
+<div id="cardMain">
+<div class="cardBody">
+  <h5 id="cardTitle"></h5>
+  <p id="cardCost"></p>
+</div>
+</div>
+
+<p>Click the button to append an item to the end of the list.</p>
+
+<button onclick="createDiv()">Try it</button>
+
+<script>
+function myFunction() {
+  var node = document.createElement("LI");
+  var textnode = document.createTextNode("Water");
+  node.appendChild(textnode);
+  document.getElementById("myList").appendChild(node);
+}
+
+function createDiv() {
+  var card = document.createElement("div");
+  var body = document.createElement("div");
+  var header = document.createElement("h5");
+  var paragraph = document.createElement("p");
+  header.appendChild(paragraph);
+  body.appendChild(header);
+  card.appendChild(body);
+  document.getElementById("cardMain").appendChild(card);
+}
+</script>
+
+<p><strong>Note:</strong><br>First create an LI node,<br> then create a Text node,<br> then append the Text node to the LI node.<br>Finally append the LI node to the list.</p>
+
+</body>
+</html>
+ 
