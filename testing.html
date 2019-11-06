@@ -15,21 +15,35 @@
     <div class="container-fluid" id="cardData">
 
     </div>
+    
+    <div class="container-fluid" id="testLoop">
+
+    </div>
+    
+    <div class="container-fluid" id="stackOverflowLoop">
+
+    </div>
 
     <p>Click the button to append an item to the end of the list.</p>
 
-    <button onclick="createDiv()">Try it</button>
+    <button onclick="createDiv()">Create Div Layout</button>
+    <button onclick="forLoop()">My For Loop</button>
+  
+
+
 
     <script>
+        /// This function creates the HTML styled exactly how it's needed to append all the data
+
         function createDiv() {
             var cardRow = document.createElement("div");
             cardRow.setAttribute("class", "row");
-            
+
             var imageDiv = document.createElement("div");
             imageDiv.setAttribute("class", "col-6 image");
             imageDiv.setAttribute("align", "right");
-            imageDiv.setAttribute("style","visibility: hidden;");
-            
+            imageDiv.setAttribute("style", "visibility: hidden;");
+
             var imageSrc = document.createElement("img");
             imageSrc.setAttribute("class", "img-fluid");
             imageSrc.setAttribute("id", "cardImage");
@@ -79,7 +93,7 @@
             var paragraphSet = document.createElement("p");
             paragraphSet.setAttribute("class", "card-text");
             paragraphSet.setAttribute("id", "cardSet");
-            
+
             imageDiv.appendChild(imageSrc);
             body.appendChild(header);
             body.appendChild(paragraphType);
@@ -91,14 +105,30 @@
             body.appendChild(paragraphArtist);
             body.appendChild(paragraphSet);
             card.appendChild(body);
-            
+
             cardRow.appendChild(imageDiv);
             cardRow.appendChild(card);
-            
+
             document.getElementById("cardData").appendChild(cardRow);
-            
-            
         }
+
+        ///// This is a test function that creates divs using a for loop. I plan on adding the two together.
+        function forLoop() {
+            for (var i = 0; i < 5; i++) {
+                var createTestDiv = document.createElement("div");
+                createTestDiv.id = "divId" + i;
+                
+                var createParagraph = document.createElement("p");
+                createParagraph.id = "paragraphId" +i;
+                
+                createTestDiv.appendChild(createParagraph);
+                
+                document.getElementById("testLoop").appendChild(createTestDiv);
+            }
+        }
+        
+        ///// This is an example found on stackoverflow
+
     </script>
 
     <p><strong>Note:</strong><br>First create the card node, then body, header and paragraph.<br> Then append the paragraphs and header to body and body to card. .</p>
