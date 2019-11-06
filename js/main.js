@@ -1,5 +1,6 @@
    //Get Data From API //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+   const proxyurl = "https://cors-anywhere.herokuapp.com/"
    const baseURL = "https://api.magicthegathering.io/"
 
    function getData(type, cb) {
@@ -68,19 +69,102 @@
          document.getElementById("cardImage").style.visibility = "visible";
          document.getElementById("cardMain").style.visibility = "visible";
          var i = 0;
-         for (i = 0; i < 100; i++) {
-            document.getElementById("cardTitle").innerHTML = data.cards[i].name;
-            document.getElementById("cardType").innerHTML += "Type: " + data.cards[i].originalType;
-            document.getElementById("cardCost").innerHTML += "Cost: " + data.cards[i].manaCost;
-            document.getElementById("cardText").innerHTML += "Card Text: " + data.cards[i].text;
-            document.getElementById("cardFlavour").innerHTML += "Flavour Text: " + data.cards[i].flavor;
-            document.getElementById("cardRarity").innerHTML += "Rarity: " + data.cards[i].rarity;
-            document.getElementById("cardPower").innerHTML += "P/T: " + data.cards[i].power + " / " + data.cards[i].toughness;
-            document.getElementById("cardArtist").innerHTML += "Artist: " + data.cards[i].artist;
-            document.getElementById("cardSet").innerHTML += "Set Name: " + data.cards[i].setName;
-            document.getElementById("cardImage").src = data.cards[i].imageUrl;
+         for (i = 0; i < 5; i++) {
+            document.getElementById("cardImage" + i).style.visibility = "visible";
+            document.getElementById("cardMain" + i).style.visibility = "visible";
+
+            document.getElementById("cardTitle" + i).innerHTML = data.cards[i].name;
+            document.getElementById("cardType" + i).innerHTML += "Type: " + data.cards[i].originalType;
+            document.getElementById("cardCost" + i).innerHTML += "Cost: " + data.cards[i].manaCost;
+            document.getElementById("cardText" + i).innerHTML += "Card Text: " + data.cards[i].text;
+            document.getElementById("cardFlavour" + i).innerHTML += "Flavour Text: " + data.cards[i].flavor;
+            document.getElementById("cardRarity" + i).innerHTML += "Rarity: " + data.cards[i].rarity;
+            document.getElementById("cardPower" + i).innerHTML += "P/T: " + data.cards[i].power + " / " + data.cards[i].toughness;
+            document.getElementById("cardArtist" + i).innerHTML += "Artist: " + data.cards[i].artist;
+            document.getElementById("cardSet" + i).innerHTML += "Set Name: " + data.cards[i].setName;
+            document.getElementById("cardImage" + i).src = data.cards[i].imageUrl;
          }
 
       });
+   }
+
+   function createDiv() {
+      for (var i = 0; i < 5; i++) {
+
+         var cardRow = document.createElement("div");
+         cardRow.setAttribute("class", "row");
+
+         var imageDiv = document.createElement("div");
+         imageDiv.setAttribute("class", "col-6 image");
+         imageDiv.setAttribute("align", "right");
+         imageDiv.setAttribute("style", "visibility: hidden;");
+
+         var imageSrc = document.createElement("img");
+         imageSrc.setAttribute("class", "img-fluid");
+         imageSrc.setAttribute("id", "cardImage" + i);
+         imageSrc.setAttribute("src", "");
+         imageSrc.setAttribute("alt", "Card Image Not Available");
+
+         var card = document.createElement("div");
+         card.setAttribute("class", "col-6 card");
+         card.setAttribute("id", "cardMain" + i);
+         card.setAttribute("style", "width: 18rem; visibility: hidden;");
+
+         var body = document.createElement("div");
+         body.setAttribute("class", "card-body");
+
+         var header = document.createElement("h5");
+         header.setAttribute("class", "card-title");
+         header.setAttribute("id", "cardTitle" + i);
+
+         var paragraphType = document.createElement("p");
+         paragraphType.setAttribute("class", "card-text");
+         paragraphType.setAttribute("id", "cardType" + i);
+
+         var paragraphCost = document.createElement("p");
+         paragraphCost.setAttribute("class", "card-text");
+         paragraphCost.setAttribute("id", "cardCost" + i);
+
+         var paragraphText = document.createElement("p");
+         paragraphText.setAttribute("class", "card-text");
+         paragraphText.setAttribute("id", "cardText" + i);
+
+         var paragraphFlavour = document.createElement("p");
+         paragraphFlavour.setAttribute("class", "card-text");
+         paragraphFlavour.setAttribute("id", "cardFlavour" + i);
+
+         var paragraphRarity = document.createElement("p");
+         paragraphRarity.setAttribute("class", "card-text");
+         paragraphRarity.setAttribute("id", "cardRarity" + i);
+
+         var paragraphPower = document.createElement("p");
+         paragraphPower.setAttribute("class", "card-text");
+         paragraphPower.setAttribute("id", "cardPower" + i);
+
+         var paragraphArtist = document.createElement("p");
+         paragraphArtist.setAttribute("class", "card-text");
+         paragraphArtist.setAttribute("id", "cardArtist" + i);
+
+         var paragraphSet = document.createElement("p");
+         paragraphSet.setAttribute("class", "card-text");
+         paragraphSet.setAttribute("id", "cardSet" + i);
+
+         imageDiv.appendChild(imageSrc);
+         body.appendChild(header);
+         body.appendChild(paragraphType);
+         body.appendChild(paragraphCost);
+         body.appendChild(paragraphText);
+         body.appendChild(paragraphFlavour);
+         body.appendChild(paragraphRarity);
+         body.appendChild(paragraphPower);
+         body.appendChild(paragraphArtist);
+         body.appendChild(paragraphSet);
+         card.appendChild(body);
+
+         cardRow.appendChild(imageDiv);
+         cardRow.appendChild(card);
+
+         document.getElementById("cardData").appendChild(cardRow);
+      }
    }
    

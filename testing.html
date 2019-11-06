@@ -15,120 +15,123 @@
     <div class="container-fluid" id="cardData">
 
     </div>
-    
-    <div class="container-fluid" id="testLoop">
 
-    </div>
-    
-    <div class="container-fluid" id="stackOverflowLoop">
+    <div class="container-fluid" id="testLoop">
 
     </div>
 
     <p>Click the button to append an item to the end of the list.</p>
 
     <button onclick="createDiv()">Create Div Layout</button>
-    <button onclick="forLoop()">My For Loop</button>
-  
-
-
+    <button onclick="forLoop()">Small Test Loop</button>
 
     <script>
+    
+    
+    
+    
+    
+    
         /// This function creates the HTML styled exactly how it's needed to append all the data
 
         function createDiv() {
-            var cardRow = document.createElement("div");
-            cardRow.setAttribute("class", "row");
+             for (var i = 0; i < 5; i++) {
 
-            var imageDiv = document.createElement("div");
-            imageDiv.setAttribute("class", "col-6 image");
-            imageDiv.setAttribute("align", "right");
-            imageDiv.setAttribute("style", "visibility: hidden;");
+                var cardRow = document.createElement("div");
+                cardRow.setAttribute("class", "row");
 
-            var imageSrc = document.createElement("img");
-            imageSrc.setAttribute("class", "img-fluid");
-            imageSrc.setAttribute("id", "cardImage");
-            imageSrc.setAttribute("src", "");
-            imageSrc.setAttribute("alt", "Card Image Not Available");
+                var imageDiv = document.createElement("div");
+                imageDiv.setAttribute("class", "col-6 image");
+                imageDiv.setAttribute("align", "right");
+                //imageDiv.setAttribute("style", "visibility: hidden;");
 
-            var card = document.createElement("div");
-            card.setAttribute("class", "col-6 card");
-            card.setAttribute("id", "cardMain");
-            card.setAttribute("style", "width: 18rem; visibility: hidden;");
+                var imageSrc = document.createElement("img");
+                imageSrc.setAttribute("class", "img-fluid");
+                imageSrc.setAttribute("id", "cardImage" + i);
+                imageSrc.setAttribute("src", "");
+                imageSrc.setAttribute("alt", "Card Image Not Available");
 
-            var body = document.createElement("div");
-            body.setAttribute("class", "card-body");
+                var card = document.createElement("div");
+                card.setAttribute("class", "col-6 card");
+                card.setAttribute("id", "cardMain" + i);
+                //card.setAttribute("style", "width: 18rem; visibility: hidden;");
 
-            var header = document.createElement("h5");
-            header.setAttribute("class", "card-title");
-            header.setAttribute("id", "cardTitle");
+                var body = document.createElement("div");
+                body.setAttribute("class", "card-body");
 
-            var paragraphType = document.createElement("p");
-            paragraphType.setAttribute("class", "card-text");
-            paragraphType.setAttribute("id", "cardType");
+                var header = document.createElement("h5");
+                header.setAttribute("class", "card-title");
+                header.setAttribute("id", "cardTitle" + i);
 
-            var paragraphCost = document.createElement("p");
-            paragraphCost.setAttribute("class", "card-text");
-            paragraphCost.setAttribute("id", "cardCost");
+                var paragraphType = document.createElement("p");
+                paragraphType.setAttribute("class", "card-text");
+                paragraphType.setAttribute("id", "cardType" + i);
 
-            var paragraphText = document.createElement("p");
-            paragraphText.setAttribute("class", "card-text");
-            paragraphText.setAttribute("id", "cardText");
+                var paragraphCost = document.createElement("p");
+                paragraphCost.setAttribute("class", "card-text");
+                paragraphCost.setAttribute("id", "cardCost" + i);
 
-            var paragraphFlavour = document.createElement("p");
-            paragraphFlavour.setAttribute("class", "card-text");
-            paragraphFlavour.setAttribute("id", "cardFlavour");
+                var paragraphText = document.createElement("p");
+                paragraphText.setAttribute("class", "card-text");
+                paragraphText.setAttribute("id", "cardText" + i);
 
-            var paragraphRarity = document.createElement("p");
-            paragraphRarity.setAttribute("class", "card-text");
-            paragraphRarity.setAttribute("id", "cardRarity");
+                var paragraphFlavour = document.createElement("p");
+                paragraphFlavour.setAttribute("class", "card-text");
+                paragraphFlavour.setAttribute("id", "cardFlavour" + i);
 
-            var paragraphPower = document.createElement("p");
-            paragraphPower.setAttribute("class", "card-text");
-            paragraphPower.setAttribute("id", "cardPower");
+                var paragraphRarity = document.createElement("p");
+                paragraphRarity.setAttribute("class", "card-text");
+                paragraphRarity.setAttribute("id", "cardRarity" + i);
 
-            var paragraphArtist = document.createElement("p");
-            paragraphArtist.setAttribute("class", "card-text");
-            paragraphArtist.setAttribute("id", "cardArtist");
+                var paragraphPower = document.createElement("p");
+                paragraphPower.setAttribute("class", "card-text");
+                paragraphPower.setAttribute("id", "cardPower" + i);
 
-            var paragraphSet = document.createElement("p");
-            paragraphSet.setAttribute("class", "card-text");
-            paragraphSet.setAttribute("id", "cardSet");
+                var paragraphArtist = document.createElement("p");
+                paragraphArtist.setAttribute("class", "card-text");
+                paragraphArtist.setAttribute("id", "cardArtist" + i);
 
-            imageDiv.appendChild(imageSrc);
-            body.appendChild(header);
-            body.appendChild(paragraphType);
-            body.appendChild(paragraphCost);
-            body.appendChild(paragraphText);
-            body.appendChild(paragraphFlavour);
-            body.appendChild(paragraphRarity);
-            body.appendChild(paragraphPower);
-            body.appendChild(paragraphArtist);
-            body.appendChild(paragraphSet);
-            card.appendChild(body);
+                var paragraphSet = document.createElement("p");
+                paragraphSet.setAttribute("class", "card-text");
+                paragraphSet.setAttribute("id", "cardSet" + i);
 
-            cardRow.appendChild(imageDiv);
-            cardRow.appendChild(card);
+                imageDiv.appendChild(imageSrc);
+                body.appendChild(header);
+                body.appendChild(paragraphType);
+                body.appendChild(paragraphCost);
+                body.appendChild(paragraphText);
+                body.appendChild(paragraphFlavour);
+                body.appendChild(paragraphRarity);
+                body.appendChild(paragraphPower);
+                body.appendChild(paragraphArtist);
+                body.appendChild(paragraphSet);
+                card.appendChild(body);
 
-            document.getElementById("cardData").appendChild(cardRow);
+                cardRow.appendChild(imageDiv);
+                cardRow.appendChild(card);
+
+                document.getElementById("cardData").appendChild(cardRow);
+            }
         }
+
+
 
         ///// This is a test function that creates divs using a for loop. I plan on adding the two together.
         function forLoop() {
             for (var i = 0; i < 5; i++) {
                 var createTestDiv = document.createElement("div");
                 createTestDiv.id = "divId" + i;
-                
+
                 var createParagraph = document.createElement("p");
-                createParagraph.id = "paragraphId" +i;
-                
+                createParagraph.id = "paragraphId" + i;
+
                 createTestDiv.appendChild(createParagraph);
-                
+
                 document.getElementById("testLoop").appendChild(createTestDiv);
             }
         }
-        
-        ///// This is an example found on stackoverflow
 
+        ///// This is an example found on stackoverflow
     </script>
 
     <p><strong>Note:</strong><br>First create the card node, then body, header and paragraph.<br> Then append the paragraphs and header to body and body to card. .</p>
