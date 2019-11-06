@@ -3,11 +3,6 @@
 .container-fluid {
     background-color: #f8f9fa;
 }
-
-.deckgrid-container {
-    padding-top: 50px;
-}
-
 /*navigation*/
 
 #navbar {
@@ -19,25 +14,6 @@
 
 /*body*/
 
-#resultsContent{
-    margin-bottom: 50px;
-}
-
-.searchbar {
-    height: 80px;
-}
-
-.quick-access-header {
-    height: 150px;
-}
-
-.quick-access-row {
-    height: 250px;
-}
-
-.searchButton {
-    width: 150px;
-}
 
 #cardImage {
     position: relative;
@@ -45,39 +21,18 @@
     width: 404px;
 }
 
+#cardMain {
+    width: 18rem;
+}
+
 #cardRowId {
     padding-bottom: 50px;
     max-width: 50rem;
 }
 
-/*footer*/
-
-/*inventory*/
-
-.deckgrid {
-    min-height: 200px;
-}
-
-.inventory-filters {
-    height: 150px;
-}
-
-
-/*Decklist*/
-
 
 
 /*other?*/
-
-
-
-
-
-
-
-
-
-
 
 /* Small devices (landscape phones, 576px and up) */
 

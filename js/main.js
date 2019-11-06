@@ -75,7 +75,7 @@
             var card = document.createElement("div");
             card.setAttribute("class", "col-6 card");
             card.setAttribute("id", "cardMain" + i);
-            card.setAttribute("style", "width: 18rem;");
+            //card.setAttribute("style", "width: 18rem;");
 
             var body = document.createElement("div");
             body.setAttribute("class", "card-body");
@@ -147,7 +147,7 @@
             //            var innerId8 = document.getElementById("cardSet" + i);
             //            var innerId9 = document.getElementById("cardImage" + i);
 
-            //          innerId.innerHTML = `<img src="images/loader.gif">`;
+            //            innerId.innerHTML = `<img src="images/loader.gif">`;
             //            innerId1.innerHTML = "";
             //            innerId2.innerHTML = "";
             //            innerId3.innerHTML = "";
