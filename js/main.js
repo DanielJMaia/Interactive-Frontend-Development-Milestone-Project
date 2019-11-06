@@ -52,18 +52,18 @@
          // beginning of for loop
 
          for (var i = 0; i <= data.cards.length - 1; i++) {
-
-
+            
+            // removes all results without an image
+            if (data.cards[i].imageUrl === undefined) { continue; }
 
             // Creating the Divs
 
             var cardRow = document.createElement("div");
             cardRow.setAttribute("class", "row");
             cardRow.setAttribute("id", "cardRowId");
-            //cardRow.setAttribute("style", "padding-bottom: 50px;")
 
             var imageDiv = document.createElement("div");
-            imageDiv.setAttribute("class", "col-6 image");
+            imageDiv.setAttribute("class", "col");
             imageDiv.setAttribute("align", "right");
 
             var imageSrc = document.createElement("img");
@@ -73,9 +73,8 @@
             imageSrc.setAttribute("alt", "Card Image Not Available");
 
             var card = document.createElement("div");
-            card.setAttribute("class", "col-6 card");
+            card.setAttribute("class", "col");
             card.setAttribute("id", "cardMain" + i);
-            //card.setAttribute("style", "width: 18rem;");
 
             var body = document.createElement("div");
             body.setAttribute("class", "card-body");
