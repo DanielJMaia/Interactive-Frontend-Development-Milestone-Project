@@ -39,12 +39,28 @@
       // Getting the card data
       getData(type, function(data) {
          console.dir(data);
-         
-         for (var i = 0; i <= data.cards.length; i++) {
+
+
+
+         //testing removing all child elements
+
+         const mainParent = document.getElementById("cardData");
+         while (mainParent.firstChild) {
+            mainParent.removeChild(mainParent.firstChild);
+         }
+
+         // beginning of for loop
+
+         for (var i = 0; i <= data.cards.length - 1; i++) {
+
+
+
             // Creating the Divs
 
             var cardRow = document.createElement("div");
             cardRow.setAttribute("class", "row");
+            cardRow.setAttribute("id", "cardRowId");
+            //cardRow.setAttribute("style", "padding-bottom: 50px;")
 
             var imageDiv = document.createElement("div");
             imageDiv.setAttribute("class", "col-6 image");
@@ -116,32 +132,33 @@
             cardRow.appendChild(card);
 
             document.getElementById("cardData").appendChild(cardRow);
-            
+
             // Clearing the innerHTML of new results so that they don't keep adding on when a new card is inputted
-            var innerId = document.getElementById("cardTitle" + i);
-            var innerId1 = document.getElementById("cardType" + i);
-            var innerId2 = document.getElementById("cardCost" + i);
-            var innerId3 = document.getElementById("cardText" + i);
-            var innerId4 = document.getElementById("cardFlavour" + i);
-            var innerId5 = document.getElementById("cardRarity" + i);
-            var innerId6 = document.getElementById("cardPower" + i);
-            var innerId7 = document.getElementById("cardArtist" + i);
-            var innerId8 = document.getElementById("cardSet" + i);
-            var innerId9 = document.getElementById("cardImage" + i);
 
-            innerId.innerHTML = `<img src="images/loader.gif">`;
-            innerId1.innerHTML = "";
-            innerId2.innerHTML = "";
-            innerId3.innerHTML = "";
-            innerId4.innerHTML = "";
-            innerId5.innerHTML = "";
-            innerId6.innerHTML = "";
-            innerId7.innerHTML = "";
-            innerId8.innerHTML = "";
-            innerId9.src = "images/loader.gif";
 
-           // Filling up the respecting Div with the data
+            //            var innerId = document.getElementById("cardTitle" + i);
+            //            var innerId1 = document.getElementById("cardType" + i);
+            //            var innerId2 = document.getElementById("cardCost" + i);
+            //            var innerId3 = document.getElementById("cardText" + i);
+            //            var innerId4 = document.getElementById("cardFlavour" + i);
+            //            var innerId5 = document.getElementById("cardRarity" + i);
+            //            var innerId6 = document.getElementById("cardPower" + i);
+            //            var innerId7 = document.getElementById("cardArtist" + i);
+            //            var innerId8 = document.getElementById("cardSet" + i);
+            //            var innerId9 = document.getElementById("cardImage" + i);
 
+            //          innerId.innerHTML = `<img src="images/loader.gif">`;
+            //            innerId1.innerHTML = "";
+            //            innerId2.innerHTML = "";
+            //            innerId3.innerHTML = "";
+            //            innerId4.innerHTML = "";
+            //            innerId5.innerHTML = "";
+            //            innerId6.innerHTML = "";
+            //            innerId7.innerHTML = "";
+            //            innerId8.innerHTML = "";
+            //            innerId9.src = "images/loader.gif";
+
+            // Filling up the respecting Div with the data
             document.getElementById("cardTitle" + i).innerHTML = data.cards[i].name;
             document.getElementById("cardType" + i).innerHTML += "Type: " + data.cards[i].originalType;
             document.getElementById("cardCost" + i).innerHTML += "Cost: " + data.cards[i].manaCost;
@@ -156,3 +173,4 @@
 
       });
    }
+   

@@ -39,10 +39,15 @@
     width: 150px;
 }
 
-.cardImage {
+#cardImage {
     position: relative;
     height: 285px;
     width: 404px;
+}
+
+#cardRowId {
+    padding-bottom: 50px;
+    max-width: 50rem;
 }
 
 /*footer*/
