@@ -68,7 +68,7 @@
             imageDiv.setAttribute("align", "center");
 
             var imageSrc = document.createElement("img");
-            imageSrc.setAttribute("class", "img-fluid");
+            imageSrc.setAttribute("class", "img-fluid imgClass");
             imageSrc.setAttribute("id", "cardImage" + i);
             imageSrc.setAttribute("src", "");
             imageSrc.setAttribute("alt", "Card Image Not Available");
