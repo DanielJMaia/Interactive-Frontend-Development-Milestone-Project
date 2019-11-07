@@ -61,10 +61,11 @@
             var cardRow = document.createElement("div");
             cardRow.setAttribute("class", "row");
             cardRow.setAttribute("id", "cardRowId");
+            cardRow.setAttribute("align", "center");
 
             var imageDiv = document.createElement("div");
-            imageDiv.setAttribute("class", "col");
-            imageDiv.setAttribute("align", "right");
+            imageDiv.setAttribute("class", "col-lg-6 col-sm-12");
+            imageDiv.setAttribute("align", "center");
 
             var imageSrc = document.createElement("img");
             imageSrc.setAttribute("class", "img-fluid");
@@ -73,8 +74,9 @@
             imageSrc.setAttribute("alt", "Card Image Not Available");
 
             var card = document.createElement("div");
-            card.setAttribute("class", "col");
+            card.setAttribute("class", "col-md-6 col-sm-12");
             card.setAttribute("id", "cardMain" + i);
+            card.setAttribute("align", "left");
 
             var body = document.createElement("div");
             body.setAttribute("class", "card-body");
