@@ -23,15 +23,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Favourites <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Wishlist<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
                 <ul class="navbar-nav navbar-right">
                     <li class="nav-item">
-                        <input class="form-control mr-sm-2" id="cardName" type="text" autocomplete="off" placeholder="Browse Magic Cards" aria-label="Search" />
+                        <input class="form-control mr-sm-2 cardSearchBar" id="cardName" type="text" autocomplete="off" placeholder="Browse Magic Cards" aria-label="Search" />
                     </li>
                 </ul>
 
@@ -64,25 +64,44 @@
                 <span class="sr-only">Next</span>
             </a>
             </div>
+
+            <!-- Additional Information -->
+
+            <div class="row" id="addedInfo">
+                <div class="col-md-6">
+                    <h5>Additional Information</h1>
+                        <p>I don't know what to do with this section</p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Additional Information</h1>
+                        <p>I don't know what to do with this section</p>
+                </div>
+            </div>
         </div>
+        
+        <!-- /Additional Information -->
 
         <!-- Footer -->
-        <footer class="page-footer font-small teal pt-4">
+        <footer class="page-footer font-small pt-4">
             <div class="container-fluid text-center text-md-left">
-                <div class="row">
-                    <div class="col-md-6 mt-md-0 mt-3">
-                        <h5 class="text-uppercase font-weight-bold">API Source:</h5>
-                        <a href="https://magicthegathering.io/"> Magic The Gathering.IO</a>
+                <div class="row" id="footerInfo">
+                    <div class="col-md-4" id="ApiInfo">
+                        <h5 class="font-weight-bold">API Source:</h5>
+                        <a href="https://magicthegathering.io/" id="ApiLink" target="_blank"> Magic The Gathering.IO</a>
                     </div>
-                    <hr class="clearfix w-100 d-md-none pb-3">
-                    <div class="col-md-6 mb-md-0 mb-3">
-                        <h5 class="text-uppercase font-weight-bold">Footer text 2</h5>
+
+                    <div class="col-md-4">
+                        <h5 class="font-weight-bold">Footer text 2</h5>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio deserunt fuga perferendis modi earum commodi aperiam temporibus quod nulla nesciunt aliquid debitis ullam omnis quos ipsam, aspernatur id excepturi hic.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="font-weight-bold">Footer text 2</h5>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio deserunt fuga perferendis modi earum commodi aperiam temporibus quod nulla nesciunt aliquid debitis ullam omnis quos ipsam, aspernatur id excepturi hic.</p>
                     </div>
                 </div>
             </div>
-            <div class="footer-copyright text-center py-3">© 2018 Copyright:
-                <a href="..."> Daniel Johnson Maia</a>
+            <div class="footer-copyright text-center py-3" id="copyrightFooter">© 2018 Copyright:
+                <a href="https://github.com/DanielJMaia/Interactive-Frontend-Development-Milestone-Project" target="_blank" id="gitHubLink"> Daniel Johnson Maia</a>
             </div>
         </footer>
     </div>

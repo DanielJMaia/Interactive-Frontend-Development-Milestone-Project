@@ -10,8 +10,8 @@ body {
 
 #navbar {
     background-color: #1f1f1f;
-    padding-bottom: 50px;
-    padding-top: 15px;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 nav>a {
@@ -22,12 +22,8 @@ li>a {
     color: #D3D3D3;
 }
 
-nav>a:hover {
-    color: #A9A9A9;
-}
-
-li>a:hover {
-    color: #A9A9A9;
+.cardSearchBar {
+    width: 100%;
 }
 
 /*headers*/
@@ -58,31 +54,56 @@ li>a:hover {
     max-width: 50rem;
 }
 
-h5 {
-    color: #D3D3D3;
-    padding: 5px 15px 0 15px;
+#card-title {
+    color: #000;
+    padding: 5px 15px 10px 15px;
 
 }
 
-p {
-    color: #D3D3D3;
+.card-text {
+    color: #000;
     margin-bottom: 10px;
-    border-bottom: 1px solid #fff5f526;
+    border-bottom: 1px solid #000;
     padding: 0 15px 5px 15px;
 }
 
 .card-body {
-    border: 3px solid #fff5f526;
+    border: 3px solid #000;
     margin: 15px auto 0 auto;
     padding: 0px;
 }
 
+#cardData {
+    padding: 0px 0px 0px 0px;
+    background-color: #fff;
+}
+
+#addedInfo{
+    color: black;
+    padding: 10px 5px 5px 5px;
+}
 
 
 /*footer*/
 
-#footer {
+#footerInfo {
     color: white;
+}
+
+#ApiLink {
+    color: white;
+}
+
+#ApiInfo {
+    margin-bottom: 2rem;
+}
+
+#copyrightFooter {
+    color: #fff;
+}
+
+#gitHubLink {
+    color: #fff;
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -101,6 +122,12 @@ p {
     .imgClass {
         width: 75%;
     }
+    .cardSearchBar {
+        width: 50%;
+    }
+    #cardData {
+        padding: 15px 15px 15px 15px;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -112,7 +139,17 @@ p {
     .card-body {
         margin: 0px auto 0 auto;
     }
+    .cardSearchBar {
+        width: 100%;
+    }
+    
+    #addedInfo{
+    padding: 15px 10px 10px 10px;
 }
+
+
+}
+
 
 /* Extra large devices (large desktops, 1200px and up) */
 
@@ -120,4 +157,21 @@ p {
     .quick-access-content {
         padding: 50px;
     }
+
+    .nav-link:hover {
+        color: #A9A9A9;
+    }
+
+    li>a:hover {
+        color: #A9A9A9;
+    }
+
+    #ApiLink:hover {
+        cursor: pointer;
+    }
+    
+    #gitHubLink:hover {
+        cursor: pointer;
+    }
+
 }
