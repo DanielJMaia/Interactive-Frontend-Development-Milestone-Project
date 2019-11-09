@@ -4,8 +4,6 @@ body {
     background-color: #1f1f1f;
 }
 
-.container-fluid {}
-
 /*navigation*/
 
 #navbar {
@@ -100,6 +98,7 @@ li>a {
 
 #copyrightFooter {
     color: #fff;
+    margin-top: 2rem
 }
 
 #gitHubLink {
@@ -113,12 +112,6 @@ li>a {
 /* Medium devices (tablets, 768px and up) */
 
 @media (min-width: 768px) {
-
-    #navbar {
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-
     .imgClass {
         width: 75%;
     }
@@ -127,6 +120,9 @@ li>a {
     }
     #cardData {
         padding: 15px 15px 15px 15px;
+    }
+    #infoData {
+        text-align: center;
     }
 }
 
@@ -151,7 +147,7 @@ li>a {
 }
 
 
-/* Extra large devices (large desktops, 1200px and up) */
+/* Very large devices (large tablets, laptops, 1200px and up) */
 
 @media (min-width: 1200px) {
     .quick-access-content {
@@ -173,5 +169,20 @@ li>a {
     #gitHubLink:hover {
         cursor: pointer;
     }
+    #navbar {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 
 }
+
+/* Extra large devices (large desktops, Monitors, TV's, 1920px and up) */
+
+@media (min-width: 1920px) {
+#mainContainer {
+    padding-left: 100px;
+    padding-right: 100px 
+}
+    
+}
+
