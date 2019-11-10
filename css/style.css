@@ -30,9 +30,24 @@ li>a {
     padding: 15px 25px 50px 25px;
 }
 
+.navbar-brand {
+    color: #DCDCDC!important
+}
+
+.navbar-dark .navbar-toggler {
+    border-color: rgba(255,255,255,.4);
+}
+
 /*headers*/
 
 /*body*/
+
+#noResults{
+    display: none;
+    color: #DCDCDC;
+    min-height: 15rem;
+    margin-top: 10rem;
+}
 
 #slideshowImg {
     max-width: 100%;
@@ -84,7 +99,7 @@ li>a {
 
 #cardData {
     padding: 0px 0px 0px 0px;
-    background-color: #fff;
+    background-color: #DCDCDC;
 }
 
 #cardData1 {
@@ -100,11 +115,11 @@ li>a {
 /*footer*/
 
 #footerInfo {
-    color: white;
+    color: #DCDCDC;
 }
 
 #ApiLink {
-    color: white;
+    color: #DCDCDC;
 }
 
 #ApiInfo {
@@ -112,12 +127,12 @@ li>a {
 }
 
 #copyrightFooter {
-    color: #fff;
+    color: #DCDCDC;
     margin-top: 2rem
 }
 
 #gitHubLink {
-    color: #fff;
+    color: #DCDCDC;
 }
 
 /* Small devices (landscape phones, 576px and up) */
