@@ -68,8 +68,8 @@
             // beginning of for loop
             for (var i = 0; i <= data.cards.length - 1; i++) {
 
-               // removes all results without an image
-               if (data.cards[i].imageUrl === undefined) { continue; }
+               // removes all results without an image & that aren't elementals
+               if (data.cards[i].originalType !== "Creature - Elemental") { continue; }
 
 
                // Creating the Divs
