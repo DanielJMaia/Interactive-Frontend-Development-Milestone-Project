@@ -179,10 +179,19 @@
                document.getElementById("cardTitle" + i).innerHTML = data.cards[i].name;
                document.getElementById("cardType" + i).innerHTML += "Type: " + data.cards[i].originalType;
                document.getElementById("cardCost" + i).innerHTML += "Cost: " + data.cards[i].manaCost;
+               if (data.cards[i].text === undefined) {document.getElementById("cardText" + i).innerHTML += "This card has no descriptive text";}
+               else {
                document.getElementById("cardText" + i).innerHTML += "Card Text: " + data.cards[i].text;
+               }
+               if (data.cards[i].flavor === undefined) {document.getElementById("cardFlavour" + i).innerHTML += "This card has no flavour text";}
+               else {
                document.getElementById("cardFlavour" + i).innerHTML += "Flavour Text: " + data.cards[i].flavor;
+               }
                document.getElementById("cardRarity" + i).innerHTML += "Rarity: " + data.cards[i].rarity;
+               if (data.cards[i].power === undefined) {document.getElementById("cardPower" + i).innerHTML += "This card has no power and toughness values";}
+               else {
                document.getElementById("cardPower" + i).innerHTML += "P/T: " + data.cards[i].power + " / " + data.cards[i].toughness;
+               }
                document.getElementById("cardArtist" + i).innerHTML += "Artist: " + data.cards[i].artist;
                document.getElementById("cardSet" + i).innerHTML += "Set Name: " + data.cards[i].setName;
                document.getElementById("cardImage" + i).src = data.cards[i].imageUrl;
