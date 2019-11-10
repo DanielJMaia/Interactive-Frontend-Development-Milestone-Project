@@ -42,11 +42,17 @@
 
 
 
-         //testing removing all child elements
+         //Removing all child elements
 
          const mainParent = document.getElementById("cardData");
          while (mainParent.firstChild) {
             mainParent.removeChild(mainParent.firstChild);
+            mainParent.style.display = "none";
+         }
+         
+         const dataParent = document.getElementById("cardData1");
+         while (dataParent.firstChild) {
+            dataParent.removeChild(dataParent.firstChild);
          }
 
          // beginning of for loop
@@ -55,7 +61,9 @@
             
             // removes all results without an image
             if (data.cards[i].imageUrl === undefined) { continue; }
-
+            
+            // No results
+            
             // Creating the Divs
 
             var cardRow = document.createElement("div");
@@ -114,7 +122,7 @@
             paragraphArtist.setAttribute("id", "cardArtist" + i);
 
             var paragraphSet = document.createElement("p");
-            paragraphSet.setAttribute("class", "card-text");
+            paragraphSet.setAttribute("class", "card-text noBorder");
             paragraphSet.setAttribute("id", "cardSet" + i);
 
             imageDiv.appendChild(imageSrc);
@@ -132,7 +140,7 @@
             cardRow.appendChild(imageDiv);
             cardRow.appendChild(card);
 
-            document.getElementById("cardData").appendChild(cardRow);
+            document.getElementById("cardData1").appendChild(cardRow);
 
             // Clearing the innerHTML of new results so that they don't keep adding on when a new card is inputted
 

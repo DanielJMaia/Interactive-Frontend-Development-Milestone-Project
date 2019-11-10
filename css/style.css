@@ -1,15 +1,16 @@
 /*container & body styling*/
 
 body {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url("../images/background.jpg");
     background-color: #1f1f1f;
 }
 
 /*navigation*/
 
 #navbar {
-    background-color: #282828;
     padding-bottom: 20px;
     padding-top: 20px;
+    margin-top: 20px;
     border-radius: 10px;
 }
 
@@ -53,33 +54,41 @@ li>a {
 }
 
 #cardRowId {
-    padding-bottom: 50px;
+    padding: 25px 0 50px 0;
     max-width: 50rem;
-    margin: auto;
 }
 
-#card-title {
-    color: #000;
+.card-title {
+    color: #DCDCDC;
     padding: 5px 15px 10px 15px;
-
 }
 
 .card-text {
-    color: #000;
+    color: #DCDCDC;
     margin-bottom: 10px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #B8B8B8;
     padding: 0 15px 5px 15px;
 }
 
+.noBorder {
+    border-bottom: none;
+}
+
 .card-body {
-    border: 3px solid #000;
+    border: 7px solid #000;
     margin: 15px auto 0 auto;
     padding: 0px;
+    border-radius: 5px;
+    background-color: #131313;
 }
 
 #cardData {
     padding: 0px 0px 0px 0px;
     background-color: #fff;
+}
+
+#cardData1 {
+    background-color: #58585838;
 }
 
 #addedInfo {
@@ -125,6 +134,7 @@ li>a {
     #cardData {
         padding: 15px 15px 15px 15px;
     }
+
     #infoData {
         text-align: center;
     }
@@ -151,6 +161,9 @@ li>a {
     }
     .imgClass {
         width: 75%;
+    }
+    #cardRowId {
+        margin: auto;
     }
 
 
@@ -180,7 +193,6 @@ li>a {
         cursor: pointer;
     }
     #navbar {
-        margin-top: 20px;
         margin-bottom: 20px;
     }
 
@@ -216,4 +228,5 @@ li>a {
         padding-left: 30%;
         padding-right: 30%
     }
+
 }
