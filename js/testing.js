@@ -196,11 +196,26 @@
                document.getElementById("cardArtist" + i).innerHTML += "Artist: " + data.cards[i].artist;
                document.getElementById("cardSet" + i).innerHTML += "Set Name: " + data.cards[i].setName;
                document.getElementById("cardImage" + i).src = data.cards[i].imageUrl;
+            
+               
+               // Replaced all instances of the rarity "Rare with the word testing"
+               
+               var toBeReplaced = document.getElementById("cardRarity" + i).innerHTML;
+               var replacementString = toBeReplaced.replace(/Rare/g, "testing");
+               document.getElementById("cardRarity" + i).innerHTML = replacementString;
+               
+               // Doesn't work here however, since the characters {} make it look for something?
+               
+               //var toBeReplaced = document.getElementById("cardCost" + i).innerHTML;
+               //var replacementString = toBeReplaced.replace(/{0}/g, "testing");
+               //document.getElementById("cardCost" + i).innerHTML = replacementString;
+               
             }
          }
 
       });
       
       
+     
    }
    
