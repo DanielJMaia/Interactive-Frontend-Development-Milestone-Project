@@ -7,9 +7,10 @@ body {
 /*navigation*/
 
 #navbar {
-    background-color: #1f1f1f;
+    background-color: #282828;
     padding-bottom: 20px;
     padding-top: 20px;
+    border-radius: 10px;
 }
 
 nav>a {
@@ -22,6 +23,10 @@ li>a {
 
 .cardSearchBar {
     width: 100%;
+}
+
+#searchBar {
+    padding: 15px 25px 50px 25px;
 }
 
 /*headers*/
@@ -50,6 +55,7 @@ li>a {
 #cardRowId {
     padding-bottom: 50px;
     max-width: 50rem;
+    margin: auto;
 }
 
 #card-title {
@@ -76,7 +82,7 @@ li>a {
     background-color: #fff;
 }
 
-#addedInfo{
+#addedInfo {
     color: black;
     padding: 10px 5px 5px 5px;
 }
@@ -113,16 +119,17 @@ li>a {
 
 @media (min-width: 768px) {
     .imgClass {
-        width: 75%;
-    }
-    .cardSearchBar {
         width: 50%;
     }
+
     #cardData {
         padding: 15px 15px 15px 15px;
     }
     #infoData {
         text-align: center;
+    }
+    #searchBar {
+        max-width: 75%;
     }
 }
 
@@ -135,13 +142,16 @@ li>a {
     .card-body {
         margin: 0px auto 0 auto;
     }
-    .cardSearchBar {
-        width: 100%;
+    #searchBar {
+        max-width: 65%;
+        padding: 15px 50px 50px 50px;
     }
-    
-    #addedInfo{
-    padding: 15px 10px 10px 10px;
-}
+    #addedInfo {
+        padding: 15px 10px 10px 10px;
+    }
+    .imgClass {
+        width: 75%;
+    }
 
 
 }
@@ -165,7 +175,7 @@ li>a {
     #ApiLink:hover {
         cursor: pointer;
     }
-    
+
     #gitHubLink:hover {
         cursor: pointer;
     }
@@ -174,15 +184,36 @@ li>a {
         margin-bottom: 20px;
     }
 
+    #searchBar {
+        max-width: 50%;
+    }
+
 }
 
 /* Extra large devices (large desktops, Monitors, TV's, 1920px and up) */
 
 @media (min-width: 1920px) {
-#mainContainer {
-    padding-left: 100px;
-    padding-right: 100px 
-}
-    
+    #mainContainer {
+        padding-left: 100px;
+        padding-right: 100px
+    }
+
 }
 
+/* Mega large devices (1440p Display) */
+
+@media (min-width: 2560px) {
+
+    #mainContainer {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+}
+
+@media (min-width: 3500px) {
+
+    #mainContainer {
+        padding-left: 30%;
+        padding-right: 30%
+    }
+}

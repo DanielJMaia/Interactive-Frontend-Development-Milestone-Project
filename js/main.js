@@ -59,7 +59,7 @@
             // Creating the Divs
 
             var cardRow = document.createElement("div");
-            cardRow.setAttribute("class", "row");
+            cardRow.setAttribute("class", "row justify-content-center");
             cardRow.setAttribute("id", "cardRowId");
             cardRow.setAttribute("align", "center");
 
