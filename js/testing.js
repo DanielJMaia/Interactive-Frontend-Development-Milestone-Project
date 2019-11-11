@@ -71,8 +71,6 @@
                // removes all results without an image
                if (data.cards[i].imageUrl === undefined) { continue; }
 
-               // No results
-
                // Creating the Divs
 
                var cardRow = document.createElement("div");

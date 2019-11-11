@@ -15,8 +15,6 @@
       };
    }
 
-
-
    //Trigger grabname() on enter click/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
    var enterClick = document.getElementById("cardName");
@@ -39,8 +37,6 @@
       // Getting the card data
       getData(type, function(data) {
          console.dir(data);
-
-
 
          //Removing all child elements
 
