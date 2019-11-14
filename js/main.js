@@ -2,30 +2,16 @@
 
    const baseURL = "https://api.magicthegathering.io/"
 
-   function getData(type, cb) {
-      var request = new XMLHttpRequest();
-
-      request.open("GET", baseURL + type);
-      request.send();
-
-      request.onreadystatechange = function() {
-         if (this.readyState == 4 && this.status == 200) {
-            cb(JSON.parse(this.responseText));
-         }
-      };
-   }
-
-   //Trigger grabname() on enter click//
 
    var enterClick = document.getElementById("cardName");
    enterClick.addEventListener("keyup", function(event) {
       if (event.keyCode === 13) {
          event.preventDefault();
          grabName();
+         clearChildrenFunction();
+         document.getElementById("loader").style.display = "block";
       }
    });
-
-   //Retrieval Functions //
 
    function grabName() {
       var nameValue = document.getElementById("cardName").value;
@@ -33,40 +19,54 @@
       writeNameToDocument(`v1/cards?name=${nameValue}`);
    }
 
+   function clearChildrenFunction() {
+      const mainParent = document.getElementById("cardData");
+      while (mainParent.firstChild) {
+         mainParent.removeChild(mainParent.firstChild);
+         mainParent.style.display = "none";
+      }
+
+      const dataParent = document.getElementById("cardData1");
+      while (dataParent.firstChild) {
+         dataParent.removeChild(dataParent.firstChild);
+      }
+   }
+
+   function noDataFunction() {
+      console.log("No matches");
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("noResults").style.display = "block";
+   }
+   
+   function getData(type, cb) {
+      var request = new XMLHttpRequest();
+   
+      request.open("GET", baseURL + type);
+      request.send();
+   
+      request.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 200) {
+            cb(JSON.parse(this.responseText));
+         }
+      };
+   }
+   
    function writeNameToDocument(type) {
-      // Getting the card data
+      // Retrieving the card data
       getData(type, function(data) {
          console.dir(data);
-
-         //Removing all child elements
-
-         const mainParent = document.getElementById("cardData");
-         while (mainParent.firstChild) {
-            mainParent.removeChild(mainParent.firstChild);
-            mainParent.style.display = "none";
-         }
-
-         const dataParent = document.getElementById("cardData1");
-         while (dataParent.firstChild) {
-            dataParent.removeChild(dataParent.firstChild);
-         }
-
-
-         // No results
          if (data.cards.length === 0) {
-            console.log("No matches");
-
-            document.getElementById("noResults").style.display = "block";
+           // document.getElementById("loader").style.display = "block";
+            noDataFunction();
          }
-
          else {
             document.getElementById("noResults").style.display = "none";
-            // beginning of for loop
+            
+
             for (var i = 0; i <= data.cards.length - 1; i++) {
 
                // removes all results without an image
                if (data.cards[i].imageUrl === undefined) { continue; }
-
 
                // Creating the Divs
 
@@ -138,31 +138,6 @@
 
                document.getElementById("cardData1").appendChild(cardRow);
 
-               // Clearing the innerHTML of new results so that they don't keep adding on when a new card is inputted
-
-
-               //            var innerId = document.getElementById("cardTitle" + i);
-               //            var innerId1 = document.getElementById("cardType" + i);
-               //            var innerId2 = document.getElementById("cardCost" + i);
-               //            var innerId3 = document.getElementById("cardText" + i);
-               //            var innerId4 = document.getElementById("cardFlavour" + i);
-               //            var innerId5 = document.getElementById("cardRarity" + i);
-               //            var innerId6 = document.getElementById("cardPower" + i);
-               //            var innerId7 = document.getElementById("cardArtist" + i);
-               //            var innerId8 = document.getElementById("cardSet" + i);
-               //            var innerId9 = document.getElementById("cardImage" + i);
-
-               //            innerId.innerHTML = `<img src="images/loader.gif">`;
-               //            innerId1.innerHTML = "";
-               //            innerId2.innerHTML = "";
-               //            innerId3.innerHTML = "";
-               //            innerId4.innerHTML = "";
-               //            innerId5.innerHTML = "";
-               //            innerId6.innerHTML = "";
-               //            innerId7.innerHTML = "";
-               //            innerId8.innerHTML = "";
-               //            innerId9.src = "images/loader.gif";
-
                // Filling up the respecting Div with the data
                document.getElementById("cardTitle" + i).innerHTML = data.cards[i].name;
                document.getElementById("cardType" + i).innerHTML += "Type: " + data.cards[i].originalType;
@@ -183,9 +158,9 @@
                document.getElementById("cardArtist" + i).innerHTML += "Artist: " + data.cards[i].artist;
                document.getElementById("cardSet" + i).innerHTML += "Set Name: " + data.cards[i].setName;
                document.getElementById("cardImage" + i).src = data.cards[i].imageUrl;
+               
+               document.getElementById("loader").style.display = "none";
             }
          }
-
       });
    }
-   
