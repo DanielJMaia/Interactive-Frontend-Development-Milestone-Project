@@ -1,4 +1,4 @@
-   //Get Data From API //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   //Get Data From API //
 
    const baseURL = "https://api.magicthegathering.io/"
 
@@ -15,7 +15,7 @@
       };
    }
 
-   //Trigger grabname() on enter click/////////////////////////////////////////////////////////////////////////////////////////////////////////
+   //Trigger grabname() on enter click//
 
    var enterClick = document.getElementById("cardName");
    enterClick.addEventListener("keyup", function(event) {
@@ -25,7 +25,7 @@
       }
    });
 
-   //Retrieval Functions //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   //Retrieval Functions //
 
    function grabName() {
       var nameValue = document.getElementById("cardName").value;
@@ -55,7 +55,7 @@
          // No results
          if (data.cards.length === 0) {
             console.log("No matches");
-            
+
             document.getElementById("noResults").style.display = "block";
          }
 
@@ -130,15 +130,7 @@
                paragraphSet.setAttribute("id", "cardSet" + i);
 
                imageDiv.appendChild(imageSrc);
-               body.appendChild(header);
-               body.appendChild(paragraphType);
-               body.appendChild(paragraphCost);
-               body.appendChild(paragraphText);
-               body.appendChild(paragraphFlavour);
-               body.appendChild(paragraphRarity);
-               body.appendChild(paragraphPower);
-               body.appendChild(paragraphArtist);
-               body.appendChild(paragraphSet);
+               body.append(header, paragraphType, paragraphCost, paragraphText, paragraphFlavour, paragraphRarity, paragraphPower, paragraphArtist, paragraphSet);
                card.appendChild(body);
 
                cardRow.appendChild(imageDiv);
@@ -175,18 +167,18 @@
                document.getElementById("cardTitle" + i).innerHTML = data.cards[i].name;
                document.getElementById("cardType" + i).innerHTML += "Type: " + data.cards[i].originalType;
                document.getElementById("cardCost" + i).innerHTML += "Cost: " + data.cards[i].manaCost;
-               if (data.cards[i].text === undefined) {document.getElementById("cardText" + i).innerHTML += "This card has no descriptive text";}
+               if (data.cards[i].text === undefined) { document.getElementById("cardText" + i).innerHTML += "This card has no descriptive text"; }
                else {
-               document.getElementById("cardText" + i).innerHTML += "Card Text: " + data.cards[i].text;
+                  document.getElementById("cardText" + i).innerHTML += "Card Text: " + data.cards[i].text;
                }
-               if (data.cards[i].flavor === undefined) {document.getElementById("cardFlavour" + i).innerHTML += "This card has no flavour text";}
+               if (data.cards[i].flavor === undefined) { document.getElementById("cardFlavour" + i).innerHTML += "This card has no flavour text"; }
                else {
-               document.getElementById("cardFlavour" + i).innerHTML += "Flavour Text: " + data.cards[i].flavor;
+                  document.getElementById("cardFlavour" + i).innerHTML += "Flavour Text: " + data.cards[i].flavor;
                }
                document.getElementById("cardRarity" + i).innerHTML += "Rarity: " + data.cards[i].rarity;
-               if (data.cards[i].power === undefined) {document.getElementById("cardPower" + i).innerHTML += "This card has no power and toughness values";}
+               if (data.cards[i].power === undefined) { document.getElementById("cardPower" + i).innerHTML += "This card has no power and toughness values"; }
                else {
-               document.getElementById("cardPower" + i).innerHTML += "P/T: " + data.cards[i].power + " / " + data.cards[i].toughness;
+                  document.getElementById("cardPower" + i).innerHTML += "P/T: " + data.cards[i].power + " / " + data.cards[i].toughness;
                }
                document.getElementById("cardArtist" + i).innerHTML += "Artist: " + data.cards[i].artist;
                document.getElementById("cardSet" + i).innerHTML += "Set Name: " + data.cards[i].setName;

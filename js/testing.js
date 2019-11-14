@@ -133,15 +133,16 @@
                paragraphSet.setAttribute("id", "cardSet" + i);
 
                imageDiv.appendChild(imageSrc);
-               body.appendChild(header);
-               body.appendChild(paragraphType);
-               body.appendChild(paragraphCost);
-               body.appendChild(paragraphText);
-               body.appendChild(paragraphFlavour);
-               body.appendChild(paragraphRarity);
-               body.appendChild(paragraphPower);
-               body.appendChild(paragraphArtist);
-               body.appendChild(paragraphSet);
+               body.append(header, paragraphType, paragraphCost, paragraphText, paragraphFlavour, paragraphRarity, paragraphPower, paragraphArtist, paragraphSet);
+               //body.appendChild(header);
+               //body.appendChild(paragraphType);
+               //body.appendChild(paragraphCost);
+               //body.appendChild(paragraphText);
+               //body.appendChild(paragraphFlavour);
+               //body.appendChild(paragraphRarity);
+               //body.appendChild(paragraphPower);
+               //body.appendChild(paragraphArtist);
+               //body.appendChild(paragraphSet);
                card.appendChild(body);
 
                cardRow.appendChild(imageDiv);
@@ -196,17 +197,12 @@
                document.getElementById("cardImage" + i).src = data.cards[i].imageUrl;
             
                
-               // Replaced all instances of the rarity "Rare with the word testing"
+               // Replace all the symbols for mana and tapping. 
                
-               var toBeReplaced = document.getElementById("cardRarity" + i).innerHTML;
-               var replacementString = toBeReplaced.replace(/Rare/g, "testing");
-               document.getElementById("cardRarity" + i).innerHTML = replacementString;
-               
-               // Doesn't work here however, since the characters {} make it look for something?
-               
-               //var toBeReplaced = document.getElementById("cardCost" + i).innerHTML;
-               //var replacementString = toBeReplaced.replace(/{0}/g, "testing");
-               //document.getElementById("cardCost" + i).innerHTML = replacementString;
+               //var img0 = imageSrc("images/symbols/0.svg");
+               //var replaceCost = document.getElementById("cardCost" + i).innerHTML;
+               //var replacementCostString = replaceCost.replace(/[{0}]/g, img0 );
+               //document.getElementById("cardCost" + i).innerHTML = replacementCostString;
                
             }
          }
