@@ -1,8 +1,11 @@
 /*container & body styling*/
 
 body {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url("../images/background.jpg");
+    /* background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url("../images/background.jpg");
     background-color: #1f1f1f;
+    */
+    background: radial-gradient(circle, rgb(37, 0, 144) 0%, rgba(0, 0, 0, 1) 90%);
+    word-wrap: break-word;
 }
 
 /*navigation*/
@@ -35,14 +38,14 @@ li>a {
 }
 
 .navbar-dark .navbar-toggler {
-    border-color: rgba(255,255,255,.4);
+    border-color: rgba(255, 255, 255, .4);
 }
 
 /*headers*/
 
 /*body*/
 
-#noResults{
+#noResults {
     display: none;
     color: #DCDCDC;
     min-height: 15rem;
@@ -69,8 +72,9 @@ li>a {
 }
 
 #cardRowId {
-    padding: 25px 0 50px 0;
+    padding: 35px 0 35px 0;
     max-width: 50rem;
+    border-bottom: 2px solid #000;
 }
 
 .card-title {
@@ -102,45 +106,61 @@ li>a {
     background-color: #DCDCDC;
 }
 
-#cardData1 {
-    background-color: #58585838;
-}
+
 
 #addedInfo {
     color: black;
     padding: 10px 5px 5px 5px;
+    background-color: #DCDCDC;
+    margin: auto;
 }
 
-#loader{
+#loader {
     display: none;
     height: 20rem;
     width: auto;
 }
 
+
+#pagination{
+margin: 20px 0 20px 0;    
+display: none;
+}
+
 /*footer*/
 
 #footerInfo {
-    color: #DCDCDC;
+    color: #000000;
+    background-color: gainsboro;
+    margin: 0 auto 0 auto;
 }
 
-#ApiLink {
-    color: #DCDCDC;
+#footerText {
+    padding: 25px 0 25px 0;
 }
 
-#ApiInfo {
-    margin-bottom: 2rem;
+#apiLink {
+    color: #000000;
+}
+
+#apiInfo {
+    margin: 1rem 0 2rem 0;
+}
+
+#addedInfo {
+    margin-top: 1rem;
 }
 
 #copyrightFooter {
-    color: #DCDCDC;
+    color: #dcdcdc;
     margin-top: 2rem
 }
 
 #gitHubLink {
-    color: #DCDCDC;
+    color: #dcdcdc;
 }
 
-.pt-4{
+.pt-4 {
     padding-top: 3.5rem!important;
 }
 
@@ -189,6 +209,7 @@ li>a {
     #cardRowId {
         margin: auto;
     }
+    
 
 
 }

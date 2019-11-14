@@ -159,6 +159,7 @@
                document.getElementById("cardSet" + i).innerHTML += "Set Name: " + data.cards[i].setName;
                document.getElementById("cardImage" + i).src = data.cards[i].imageUrl;
                
+               document.getElementById("pagination").style.display = "flex";
                document.getElementById("loader").style.display = "none";
             }
          }
