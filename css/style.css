@@ -75,6 +75,8 @@ li>a {
     padding: 35px 0 35px 0;
     max-width: 50rem;
     border-bottom: 2px solid #000;
+    background-color: #dcdcdc;
+    border-radius: 10px;
 }
 
 .card-title {
@@ -104,6 +106,7 @@ li>a {
 #cardData {
     padding: 0px 0px 0px 0px;
     background-color: #DCDCDC;
+    border-radius: 5px;
 }
 
 
@@ -113,6 +116,7 @@ li>a {
     padding: 10px 5px 5px 5px;
     background-color: #DCDCDC;
     margin: auto;
+    border-radius: 15px;
 }
 
 #loader {
@@ -122,9 +126,9 @@ li>a {
 }
 
 
-#pagination{
-margin: 20px 0 20px 0;    
-display: none;
+#pagination {
+    margin: 20px 0 20px 0;
+    display: none;
 }
 
 /*footer*/
@@ -133,6 +137,7 @@ display: none;
     color: #000000;
     background-color: gainsboro;
     margin: 0 auto 0 auto;
+    border-radius: 5px;
 }
 
 #footerText {
@@ -153,7 +158,6 @@ display: none;
 
 #copyrightFooter {
     color: #dcdcdc;
-    margin-top: 2rem
 }
 
 #gitHubLink {
@@ -185,6 +189,9 @@ display: none;
     #searchBar {
         max-width: 75%;
     }
+    #cardRowId{
+        margin: 0 50px 0 50px;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -208,7 +215,6 @@ display: none;
     }
     #cardRowId {
         margin: auto;
-        background-color: #eaeaea;
     }
     #mainBody {
         min-height: 675px;
