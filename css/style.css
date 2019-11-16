@@ -4,7 +4,7 @@ body {
     /* background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url("../images/background.jpg");
     background-color: #1f1f1f;
     */
-    background: radial-gradient(circle, rgb(37, 0, 144) 0%, rgba(0, 0, 0, 1) 90%);
+    background: radial-gradient(circle, rgb(41, 41, 41) 0%, rgba(0, 0, 0, 1) 90%);
     word-wrap: break-word;
 }
 
@@ -194,7 +194,7 @@ display: none;
         padding: 20px;
     }
     .card-body {
-        margin: 0px auto 0 auto;
+        margin: 0px 20px 0 auto;
     }
     #searchBar {
         max-width: 65%;
@@ -208,8 +208,11 @@ display: none;
     }
     #cardRowId {
         margin: auto;
+        background-color: #eaeaea;
     }
-    
+    #mainBody {
+        min-height: 675px;
+    }
 
 
 }
