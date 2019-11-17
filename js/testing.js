@@ -13,6 +13,15 @@
       }
    });
 
+
+   //Testing Pagination Onlcick Events
+   var previousClickEvent = document.getElementById("previousClick");
+   previousClickEvent.onclick = previousPagination(); 
+   
+   var nextClickEvent = document.getElementById("nextClick");
+   nextClickEvent.onclick = nextPagination();
+   //
+   
    function grabName() {
       var nameValue = document.getElementById("cardName").value;
       console.log(nameValue);
@@ -37,31 +46,31 @@
       document.getElementById("loader").style.display = "none";
       document.getElementById("noResults").style.display = "block";
    }
-   
+
    function getData(type, cb) {
       var request = new XMLHttpRequest();
-   
+
       request.open("GET", baseURL + type);
       request.send();
-   
+
       request.onreadystatechange = function() {
          if (this.readyState == 4 && this.status == 200) {
             cb(JSON.parse(this.responseText));
          }
       };
    }
-   
+
    function writeNameToDocument(type) {
       // Retrieving the card data
       getData(type, function(data) {
          console.dir(data);
          if (data.cards.length === 0) {
-           // document.getElementById("loader").style.display = "block";
+            // document.getElementById("loader").style.display = "block";
             noDataFunction();
          }
          else {
             document.getElementById("noResults").style.display = "none";
-            
+
 
             for (var i = 0; i <= data.cards.length - 1; i++) {
 
@@ -71,8 +80,8 @@
                // Creating the Divs
 
                var cardRow = document.createElement("div");
-               cardRow.setAttribute("class", "row justify-content-center");
-               cardRow.setAttribute("id", "cardRowId");
+               cardRow.setAttribute("class", "row justify-content-center cardRowClass");
+               cardRow.setAttribute("id", "cardRowId" + i);
                cardRow.setAttribute("align", "center");
 
                var imageDiv = document.createElement("div");
@@ -158,13 +167,20 @@
                document.getElementById("cardArtist" + i).innerHTML += "Artist: " + data.cards[i].artist;
                document.getElementById("cardSet" + i).innerHTML += "Set Name: " + data.cards[i].setName;
                document.getElementById("cardImage" + i).src = data.cards[i].imageUrl;
-               
+
                document.getElementById("loader").style.display = "none";
             }
          }
       });
    }
 
+   function previousPagination() {
+      
+   }
+
+   function nextPagination() {
+
+   }
 
 
    // Replace all the symbols for mana and tapping. 
