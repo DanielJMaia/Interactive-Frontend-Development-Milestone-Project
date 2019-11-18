@@ -9,7 +9,6 @@
          event.preventDefault();
          grabName();
          clearChildrenFunction();
-         document.getElementById("loader").style.display = "block";
       }
    });
 
@@ -20,11 +19,21 @@
    document.getElementById("previousClick").addEventListener("click", previousPagination);
 
    function previousPagination() {
-      document.body.scrollTop = document.documentElement.scrollTop = 0;
-      pageNumber--;
-      clearChildrenFunction();
-      document.getElementById("loader").style.display = "block";
-      grabName();
+      if (pageNumber == 1) {
+         document.body.scrollTop = document.documentElement.scrollTop = 0;
+         clearChildrenFunction();
+         document.getElementById("loader").style.display = "block";
+         grabName();
+         document.getElementById("tooFar").style.display = "none";
+      }
+      else {
+         document.body.scrollTop = document.documentElement.scrollTop = 0;
+         pageNumber--;
+         clearChildrenFunction();
+         document.getElementById("loader").style.display = "block";
+         grabName();
+         document.getElementById("tooFar").style.display = "none";
+      }
    }
 
    function nextPagination() {
@@ -32,14 +41,12 @@
       pageNumber++;
       clearChildrenFunction();
       document.getElementById("loader").style.display = "block";
-      if ((((pageNumber - 1) * 4) + 4) === undefined) {
-         document.getElementById("nextClick").style.display = "none";
-      }
       grabName();
    }
 
 
    function grabName() {
+      document.getElementById("loader").style.display = "block";
       var nameValue = document.getElementById("cardName").value;
       console.log(nameValue);
       writeNameToDocument(`v1/cards?name=${nameValue}`);
@@ -63,10 +70,7 @@
       document.getElementById("loader").style.display = "none";
       document.getElementById("noResults").style.display = "block";
    }
-   
-   function tooFar() {
-      document.getElementById("tooFar").style.display = "block";
-   }
+
 
    function getData(type, cb) {
       var request = new XMLHttpRequest();
@@ -192,9 +196,14 @@
                }
                document.getElementById("pagination").style.display = "flex";
             }
+            
+            if (document.getElementById("cardData1").innerHTML === "") {
+               pageNumber = 1;
+               grabName();
+            }
             document.getElementById("loader").style.display = "none";
-
-
+            
+            
             // Replace all the symbols for mana and tapping. 
             //var img0 = document.createElement("img");
             //img0.src = "images/symbols/0.svg";
@@ -204,9 +213,7 @@
             //var replacementCostString = replaceCost.replace(/[{0}]/g, img0);
             //document.getElementById("cardCost" + i).innerHTML = replacementCostString;
             //
-            if (document.getElementById("cardData1").innerHTML === "") {
-               noDataFunction();
-            }
+
          }
       });
    }
