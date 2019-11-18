@@ -80,17 +80,19 @@ li>a {
 
 }
 
+
 /* Some test CSS to try to only display 10 results per page*/
 
-#cardRowId0 {
-    display: none;
-}
-#cardRowId1 {
-    display: flex;
-}
+/**/
 
-.cardRowClass:nth-child(-n+10) {
-    display: flex;
+#nextClick{
+    width: 85.66px;
+}
+#nextClick:hover {
+    cursor: pointer;
+}
+#previousClick:hover {
+    cursor: pointer;
 }
 
 .card-title {

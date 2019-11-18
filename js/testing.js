@@ -1,7 +1,6 @@
    //Get Data From API //
 
-   const baseURL = "https://api.magicthegathering.io/"
-
+   const baseURL = "https://api.magicthegathering.io/";
 
    var enterClick = document.getElementById("cardName");
    enterClick.addEventListener("keyup", function(event) {
@@ -15,13 +14,23 @@
 
 
    //Testing Pagination Onlcick Events
-   var previousClickEvent = document.getElementById("previousClick");
-   previousClickEvent.onclick = previousPagination(); 
-   
-   var nextClickEvent = document.getElementById("nextClick");
-   nextClickEvent.onclick = nextPagination();
+   document.getElementById("nextClick").addEventListener("click", nextPagination);
+   document.getElementById("previousClick").addEventListener("click", previousPagination);
+
+   function firstResults() {
+      //On user input and when data loads, change style of first 15 results to "flex" instead of "none"
+   }
+
+   function previousPagination() {
+      // change style property of previous 15 results
+   }
+
+   function nextPagination() {
+      // change style property of next 15 results
+   }
+
    //
-   
+
    function grabName() {
       var nameValue = document.getElementById("cardName").value;
       console.log(nameValue);
@@ -75,13 +84,13 @@
             for (var i = 0; i <= data.cards.length - 1; i++) {
 
                // removes all results without an image
-               if (data.cards[i].imageUrl === undefined) { continue; }
+               //  if (data.cards[i].imageUrl === undefined) { continue; }
 
                // Creating the Divs
 
                var cardRow = document.createElement("div");
                cardRow.setAttribute("class", "row justify-content-center cardRowClass");
-               cardRow.setAttribute("id", "cardRowId" + i);
+               cardRow.setAttribute("id", "row" + i);
                cardRow.setAttribute("align", "center");
 
                var imageDiv = document.createElement("div");
@@ -166,22 +175,19 @@
                }
                document.getElementById("cardArtist" + i).innerHTML += "Artist: " + data.cards[i].artist;
                document.getElementById("cardSet" + i).innerHTML += "Set Name: " + data.cards[i].setName;
-               document.getElementById("cardImage" + i).src = data.cards[i].imageUrl;
 
+               if (data.cards[i].imageUrl === undefined) {
+                  document.getElementById("cardImage" + i).src = "images/magicCardBack.jpg";
+               }
+               else {
+                  document.getElementById("cardImage" + i).src = data.cards[i].imageUrl;
+               }
+               document.getElementById("pagination").style.display = "flex";
                document.getElementById("loader").style.display = "none";
             }
          }
       });
    }
-
-   function previousPagination() {
-      
-   }
-
-   function nextPagination() {
-
-   }
-
 
    // Replace all the symbols for mana and tapping. 
 

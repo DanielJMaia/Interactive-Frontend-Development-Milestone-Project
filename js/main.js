@@ -63,9 +63,6 @@
 
             for (var i = 0; i <= data.cards.length - 1; i++) {
 
-               // removes all results without an image
-               if (data.cards[i].imageUrl === undefined) { continue; }
-
                var cardRow = document.createElement("div");
                cardRow.setAttribute("class", "row justify-content-center cardRowClass");
                cardRow.setAttribute("id", "cardRowId" + i);
@@ -136,7 +133,7 @@
 
                // Filling up the respecting Div with the data
                document.getElementById("cardTitle" + i).innerHTML = data.cards[i].name;
-               document.getElementById("cardType" + i).innerHTML += "Type: " + data.cards[i].originalType;
+               document.getElementById("cardType" + i).innerHTML += "Type: " + data.cards[i].type;
                document.getElementById("cardCost" + i).innerHTML += "Cost: " + data.cards[i].manaCost;
                if (data.cards[i].text === undefined) { document.getElementById("cardText" + i).innerHTML += "This card has no descriptive text"; }
                else {
@@ -153,7 +150,12 @@
                }
                document.getElementById("cardArtist" + i).innerHTML += "Artist: " + data.cards[i].artist;
                document.getElementById("cardSet" + i).innerHTML += "Set Name: " + data.cards[i].setName;
-               document.getElementById("cardImage" + i).src = data.cards[i].imageUrl;
+               if (data.cards[i].imageUrl === undefined) {
+                  document.getElementById("cardImage" + i).src = "images/magicCardBack.jpg";
+               }
+               else {
+                  document.getElementById("cardImage" + i).src = data.cards[i].imageUrl;
+               }
 
                document.getElementById("pagination").style.display = "flex";
                document.getElementById("loader").style.display = "none";
