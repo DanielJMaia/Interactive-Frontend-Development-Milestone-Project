@@ -1,6 +1,7 @@
    //Get Data From API //
 
    const baseURL = "https://api.magicthegathering.io/";
+   var pageNumber = 1;
 
    var enterClick = document.getElementById("cardName");
    enterClick.addEventListener("keyup", function(event) {
@@ -14,22 +15,29 @@
 
 
    //Testing Pagination Onlcick Events
+
    document.getElementById("nextClick").addEventListener("click", nextPagination);
    document.getElementById("previousClick").addEventListener("click", previousPagination);
 
-   function firstResults() {
-      //On user input and when data loads, change style of first 15 results to "flex" instead of "none"
-   }
-
    function previousPagination() {
-      // change style property of previous 15 results
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+      pageNumber--;
+      clearChildrenFunction();
+      document.getElementById("loader").style.display = "block";
+      grabName();
    }
 
    function nextPagination() {
-      // change style property of next 15 results
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+      pageNumber++;
+      clearChildrenFunction();
+      document.getElementById("loader").style.display = "block";
+      if ((((pageNumber - 1) * 4) + 4) === undefined) {
+         document.getElementById("nextClick").style.display = "none";
+      }
+      grabName();
    }
 
-   //
 
    function grabName() {
       var nameValue = document.getElementById("cardName").value;
@@ -55,6 +63,10 @@
       document.getElementById("loader").style.display = "none";
       document.getElementById("noResults").style.display = "block";
    }
+   
+   function tooFar() {
+      document.getElementById("tooFar").style.display = "block";
+   }
 
    function getData(type, cb) {
       var request = new XMLHttpRequest();
@@ -74,17 +86,13 @@
       getData(type, function(data) {
          console.dir(data);
          if (data.cards.length === 0) {
-            // document.getElementById("loader").style.display = "block";
             noDataFunction();
          }
          else {
             document.getElementById("noResults").style.display = "none";
 
 
-            for (var i = 0; i <= data.cards.length - 1; i++) {
-
-               // removes all results without an image
-               //  if (data.cards[i].imageUrl === undefined) { continue; }
+            for (var i = (pageNumber - 1) * 4; i <= ((pageNumber - 1) * 4) + 4 && i <= data.cards.length - 1; i++) {
 
                // Creating the Divs
 
@@ -158,7 +166,7 @@
 
                // Filling up the respecting Div with the data
                document.getElementById("cardTitle" + i).innerHTML = data.cards[i].name;
-               document.getElementById("cardType" + i).innerHTML += "Type: " + data.cards[i].originalType;
+               document.getElementById("cardType" + i).innerHTML += "Type: " + data.cards[i].type;
                document.getElementById("cardCost" + i).innerHTML += "Cost: " + data.cards[i].manaCost;
                if (data.cards[i].text === undefined) { document.getElementById("cardText" + i).innerHTML += "This card has no descriptive text"; }
                else {
@@ -183,16 +191,23 @@
                   document.getElementById("cardImage" + i).src = data.cards[i].imageUrl;
                }
                document.getElementById("pagination").style.display = "flex";
-               document.getElementById("loader").style.display = "none";
+            }
+            document.getElementById("loader").style.display = "none";
+
+
+            // Replace all the symbols for mana and tapping. 
+            //var img0 = document.createElement("img");
+            //img0.src = "images/symbols/0.svg";
+
+            //var img0 = '<img src="images/symbols/0.svg" alt="cost" style="width: 18px; height: 18px;"/>';
+            //var replaceCost = document.getElementById("cardCost" + i).innerHTML;
+            //var replacementCostString = replaceCost.replace(/[{0}]/g, img0);
+            //document.getElementById("cardCost" + i).innerHTML = replacementCostString;
+            //
+            if (document.getElementById("cardData1").innerHTML === "") {
+               noDataFunction();
             }
          }
       });
    }
-
-   // Replace all the symbols for mana and tapping. 
-
-   //var img0 = imageSrc("images/symbols/0.svg");
-   //var replaceCost = document.getElementById("cardCost" + i).innerHTML;
-   //var replacementCostString = replaceCost.replace(/[{0}]/g, img0 );
-   //document.getElementById("cardCost" + i).innerHTML = replacementCostString;
    

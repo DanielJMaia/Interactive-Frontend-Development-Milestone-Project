@@ -51,6 +51,12 @@ li>a {
     min-height: 15rem;
     margin-top: 10rem;
 }
+#tooFar {
+    display: none;
+    color: #DCDCDC;
+    min-height: 15rem;
+    margin-top: 10rem;
+}
 
 #slideshowImg {
     max-width: 100%;
