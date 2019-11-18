@@ -12,19 +12,28 @@
       }
    });
 
-
-   //Testing Pagination Onlcick Events
-
    document.getElementById("nextClick").addEventListener("click", nextPagination);
    document.getElementById("previousClick").addEventListener("click", previousPagination);
+
+   function getData(type, cb) {
+      var request = new XMLHttpRequest();
+
+      request.open("GET", baseURL + type);
+      request.send();
+
+      request.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 200) {
+            cb(JSON.parse(this.responseText));
+         }
+      };
+   }
 
    function previousPagination() {
       if (pageNumber == 1) {
          document.body.scrollTop = document.documentElement.scrollTop = 0;
          clearChildrenFunction();
          document.getElementById("loader").style.display = "block";
-         grabName();
-         document.getElementById("tooFar").style.display = "none";
+         writeNameToDocument();
       }
       else {
          document.body.scrollTop = document.documentElement.scrollTop = 0;
@@ -32,7 +41,6 @@
          clearChildrenFunction();
          document.getElementById("loader").style.display = "block";
          grabName();
-         document.getElementById("tooFar").style.display = "none";
       }
    }
 
@@ -72,19 +80,6 @@
    }
 
 
-   function getData(type, cb) {
-      var request = new XMLHttpRequest();
-
-      request.open("GET", baseURL + type);
-      request.send();
-
-      request.onreadystatechange = function() {
-         if (this.readyState == 4 && this.status == 200) {
-            cb(JSON.parse(this.responseText));
-         }
-      };
-   }
-
    function writeNameToDocument(type) {
       // Retrieving the card data
       getData(type, function(data) {
@@ -94,11 +89,7 @@
          }
          else {
             document.getElementById("noResults").style.display = "none";
-
-
             for (var i = (pageNumber - 1) * 4; i <= ((pageNumber - 1) * 4) + 4 && i <= data.cards.length - 1; i++) {
-
-               // Creating the Divs
 
                var cardRow = document.createElement("div");
                cardRow.setAttribute("class", "row justify-content-center cardRowClass");
@@ -196,14 +187,14 @@
                }
                document.getElementById("pagination").style.display = "flex";
             }
-            
+
             if (document.getElementById("cardData1").innerHTML === "") {
                pageNumber = 1;
                grabName();
             }
             document.getElementById("loader").style.display = "none";
-            
-            
+
+
             // Replace all the symbols for mana and tapping. 
             //var img0 = document.createElement("img");
             //img0.src = "images/symbols/0.svg";

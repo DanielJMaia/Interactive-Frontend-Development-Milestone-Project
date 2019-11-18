@@ -1,6 +1,7 @@
    //Get Data From API //
 
    const baseURL = "https://api.magicthegathering.io/";
+   var pageNumber = 1;
 
    var enterClick = document.getElementById("cardName");
    enterClick.addEventListener("keyup", function(event) {
@@ -12,9 +13,35 @@
       }
    });
 
+   document.getElementById("nextClick").addEventListener("click", nextPagination);
+   document.getElementById("previousClick").addEventListener("click", previousPagination);
+
+   function previousPagination() {
+      if (pageNumber == 1) {
+         document.body.scrollTop = document.documentElement.scrollTop = 0;
+         clearChildrenFunction();
+         document.getElementById("loader").style.display = "block";
+         grabName();
+      }
+      else {
+         document.body.scrollTop = document.documentElement.scrollTop = 0;
+         pageNumber--;
+         clearChildrenFunction();
+         document.getElementById("loader").style.display = "block";
+         grabName();
+      }
+   }
+
+   function nextPagination() {
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+      pageNumber++;
+      clearChildrenFunction();
+      document.getElementById("loader").style.display = "block";
+      grabName();
+   }
+
    function grabName() {
       var nameValue = document.getElementById("cardName").value;
-      console.log(nameValue);
       writeNameToDocument(`v1/cards?name=${nameValue}`);
    }
 
@@ -32,7 +59,6 @@
    }
 
    function noDataFunction() {
-      console.log("No matches");
       document.getElementById("loader").style.display = "none";
       document.getElementById("noResults").style.display = "block";
    }
@@ -53,7 +79,6 @@
    function writeNameToDocument(type) {
       // Retrieving the card data
       getData(type, function(data) {
-         console.dir(data);
          if (data.cards.length === 0) {
             noDataFunction();
          }
@@ -61,7 +86,7 @@
             document.getElementById("noResults").style.display = "none";
 
 
-            for (var i = 0; i <= data.cards.length - 1; i++) {
+            for (var i = (pageNumber - 1) * 4; i <= ((pageNumber - 1) * 4) + 4 && i <= data.cards.length - 1; i++) {
 
                var cardRow = document.createElement("div");
                cardRow.setAttribute("class", "row justify-content-center cardRowClass");
@@ -150,17 +175,25 @@
                }
                document.getElementById("cardArtist" + i).innerHTML += "Artist: " + data.cards[i].artist;
                document.getElementById("cardSet" + i).innerHTML += "Set Name: " + data.cards[i].setName;
+
                if (data.cards[i].imageUrl === undefined) {
                   document.getElementById("cardImage" + i).src = "images/magicCardBack.jpg";
                }
                else {
                   document.getElementById("cardImage" + i).src = data.cards[i].imageUrl;
                }
-
                document.getElementById("pagination").style.display = "flex";
-               document.getElementById("loader").style.display = "none";
             }
+
+            if (document.getElementById("cardData1").innerHTML === "") {
+               pageNumber = 1;
+               grabName();
+            }
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("pagination").style.display = "flex";
+
          }
+
       });
    }
    
