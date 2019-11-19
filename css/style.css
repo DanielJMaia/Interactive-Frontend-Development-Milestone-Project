@@ -81,10 +81,6 @@ li>a {
 }
 
 
-/* Some test CSS to try to only display 10 results per page*/
-
-/**/
-
 #nextClick{
     width: 85.66px;
 }
@@ -178,6 +174,10 @@ li>a {
 
 #gitHubLink {
     color: #dcdcdc;
+}
+.symbolImg {
+    height: 18px;
+    width: 18px;
 }
 
 .pt-4 {
