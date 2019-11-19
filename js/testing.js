@@ -174,15 +174,15 @@
                   for (var z = 0; z < initialString.length; z++) {
                      if (initialString.charAt(z) == "{") {
                         symbolArray.push(initialString.charAt(z + 1));
-                     } else if (initialString.charAt(z) == "}") {
-                        symbolArray.push(initialString.charAt(z - 1));
-                     }
+                     }// else if (initialString.charAt(z) == "}") {
+                       // symbolArray.push(initialString.charAt(z - 1));
+                     //}
                   }
                   for (var y = 0; y < symbolArray.length; y++) {
-                     console.log(symbolArray[y]);
-                     var imgString = "<image class =\"symbolImg\" src=\"images/symbols/" + symbolArray + ".svg\">";
-                     
-                  }
+                     var imgString = "<image class =\"symbolImg\" src=\"images/symbols/" + symbolArray[y] + ".svg\">";
+                     document.getElementById("cardCost" + i).innerHTML += "Cost: " + imgString;
+                  } 
+                  console.log(symbolArray);
                   //console.log("symbolArray value = " + symbolArray);
                   //symbolArray.forEach(item => console.log(item));
                   
@@ -191,13 +191,13 @@
                   // End of array method attempt
 
                   // Alternate and ultimately failed attempt
-                  var symbolString = initialString.substring(
-                     initialString.lastIndexOf("{") + 1,
-                     initialString.lastIndexOf("}")
-                  );
-                  var imgString = "<image class =\"symbolImg\" src=\"images/symbols/" + symbolString + ".svg\">";
+                  //var symbolString = initialString.substring(
+                  //   initialString.lastIndexOf("{") + 1,
+                  //   initialString.lastIndexOf("}")
+                 // );
+                 // var imgString = "<image class =\"symbolImg\" src=\"images/symbols/" + symbolString + ".svg\">";
                   //document.getElementById("cardCost" + i).innerHTML = "Cost: " + data.cards[i].manaCost.replace(/[{symbolstring}]/g, imgString);
-                  document.getElementById("cardCost" + i).innerHTML = "Cost: " + imgString;
+                  //document.getElementById("cardCost" + i).innerHTML = "Cost: " + imgString;
 
                   //console.log(symbolString);
                   //console.log(imgString);
