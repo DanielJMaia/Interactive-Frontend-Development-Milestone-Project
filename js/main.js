@@ -159,7 +159,10 @@
                // Filling up the respecting Div with the data
                document.getElementById("cardTitle" + i).innerHTML = data.cards[i].name;
                document.getElementById("cardType" + i).innerHTML += "Type: " + data.cards[i].type;
-               document.getElementById("cardCost" + i).innerHTML += "Cost: " + data.cards[i].manaCost;
+               if (data.cards[i].manaCost === undefined) { document.getElementById("cardCost" + i).innerHTML += "This card has no casting cost." }
+               else {
+                  document.getElementById("cardCost" + i).innerHTML += "Cost: " + data.cards[i].manaCost;
+               }
                if (data.cards[i].text === undefined) { document.getElementById("cardText" + i).innerHTML += "This card has no descriptive text"; }
                else {
                   document.getElementById("cardText" + i).innerHTML += "Card Text: " + data.cards[i].text;

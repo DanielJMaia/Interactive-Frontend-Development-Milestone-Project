@@ -33,7 +33,7 @@
          document.body.scrollTop = document.documentElement.scrollTop = 0;
          clearChildrenFunction();
          document.getElementById("loader").style.display = "block";
-         writeNameToDocument();
+         grabName();
       }
       else {
          document.body.scrollTop = document.documentElement.scrollTop = 0;
@@ -162,7 +162,10 @@
                // Filling up the respecting Div with the data
                document.getElementById("cardTitle" + i).innerHTML = data.cards[i].name;
                document.getElementById("cardType" + i).innerHTML += "Type: " + data.cards[i].type;
-               document.getElementById("cardCost" + i).innerHTML += "Cost: " + data.cards[i].manaCost;
+               if (data.cards[i].manaCost === undefined) { document.getElementById("cardCost" + i).innerHTML += "This card has no casting cost." }
+               else {
+                  document.getElementById("cardCost" + i).innerHTML += "Cost: " + data.cards[i].manaCost;
+               }
                if (data.cards[i].text === undefined) { document.getElementById("cardText" + i).innerHTML += "This card has no descriptive text"; }
                else {
                   document.getElementById("cardText" + i).innerHTML += "Card Text: " + data.cards[i].text;
@@ -194,17 +197,19 @@
             }
             document.getElementById("loader").style.display = "none";
 
-
             // Replace all the symbols for mana and tapping. 
-            //var img0 = document.createElement("img");
-            //img0.src = "images/symbols/0.svg";
 
-            //var img0 = '<img src="images/symbols/0.svg" alt="cost" style="width: 18px; height: 18px;"/>';
-            //var replaceCost = document.getElementById("cardCost" + i).innerHTML;
-            //var replacementCostString = replaceCost.replace(/[{0}]/g, img0);
-            //document.getElementById("cardCost" + i).innerHTML = replacementCostString;
-            //
+            var symbolString = data.cards[i].manaCost.substring(
+               data.cards[i].manaCost.lastIndexOf("{") + 1,
+               data.cards[i].manaCost.lastIndexOf("}")
+            );
+            var imgString = "<image src=\"images/symbols/" + symbolString + ".svg\">";
+            document.getElementById("cardCost" + i).innerHTML.replace(/[{0}]/g, imgString);
 
+            console.log(symbolString);
+            console.log(imgString);
+
+            // End of Replace all the symbols for mana and tapping. 
          }
       });
    }
