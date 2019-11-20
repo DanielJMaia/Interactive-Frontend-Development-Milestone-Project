@@ -161,7 +161,28 @@
                document.getElementById("cardType" + i).innerHTML += "Type: " + data.cards[i].type;
                if (data.cards[i].manaCost === undefined) { document.getElementById("cardCost" + i).innerHTML += "This card has no casting cost." }
                else {
-                  document.getElementById("cardCost" + i).innerHTML += "Cost: " + data.cards[i].manaCost;
+                  document.getElementById("cardCost" + i).innerHTML += "Cost: ";
+                  // Replace all the symbols for mana and tapping.
+                  var symbolArray = [];
+                  var miniString = "";
+                  var initialString = data.cards[i].manaCost;
+                  var replacedString = initialString.replace(/\//g, "");
+                  for (var z = 0; z < replacedString.length; z++) {
+                     if (replacedString.charAt(z) == '{') {
+                        z++;
+                        while (replacedString.charAt(z) != '}') {
+                           miniString += replacedString.charAt(z);
+                           z++;
+                        }
+                     }
+                     symbolArray.push(miniString);
+                     miniString = "";
+                  }
+
+                  for (var y = 0; y < symbolArray.length; y++) {
+                     var imgString = "<image class =\"symbolImg\" src=\"images/symbols/" + symbolArray[y] + ".svg\">";
+                     document.getElementById("cardCost" + i).innerHTML += imgString;
+                  }
                }
                if (data.cards[i].text === undefined) { document.getElementById("cardText" + i).innerHTML += "This card has no descriptive text"; }
                else {

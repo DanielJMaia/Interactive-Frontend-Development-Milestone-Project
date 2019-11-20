@@ -165,9 +165,7 @@
                if (data.cards[i].manaCost === undefined) { document.getElementById("cardCost" + i).innerHTML += "This card has no casting cost." }
                else {
                   document.getElementById("cardCost" + i).innerHTML += "Cost: ";
-
                   // Replace all the symbols for mana and tapping.
-                  // Beginning of array method attempt
                   var symbolArray = [];
                   var miniString = "";
                   var initialString = data.cards[i].manaCost;
@@ -180,23 +178,13 @@
                            z++;
                         }
                      }
-                     //miniString.replace(/\//g, '');
                      symbolArray.push(miniString);
                      miniString = "";
                   }
-
                   for (var y = 0; y < symbolArray.length; y++) {
                      var imgString = "<image class =\"symbolImg\" src=\"images/symbols/" + symbolArray[y] + ".svg\">";
                      document.getElementById("cardCost" + i).innerHTML += imgString;
-                     console.log("symbolArray = " + symbolArray);
                   }
-
-                  //document.getElementById("cardCost" + i).innerHTML = document.getElementById("cardCost" + i).innerHTML.replace(/[{}]/g, "");
-
-
-
-                  // End of Replace all the symbols for mana and tapping. 
-
                }
                if (data.cards[i].text === undefined) { document.getElementById("cardText" + i).innerHTML += "This card has no descriptive text"; }
                else {
@@ -204,17 +192,44 @@
 
                   // working on text bit
 
+                  document.getElementById("cardText" + i).innerHTML += "Description: ";
 
-                  document.getElementById("cardText" + i).innerHTML += "Card Text: " + data.cards[i].text;
+                  // Replace all the symbols for mana and tapping.
+
+                  var symbolArray1 = [];
+                  var miniString1 = "";
+                  var initialString1 = data.cards[i].text;
+                  console.log("Text = " + initialString1);
+                  // var replacedString1 = initialString1.replace(/\//g, "");
+                  for (var x = 0; x < initialString1.length; x++) {
+                     if (initialString1.charAt(x) == '{') {
+                        x++;
+                        while (initialString1.charAt(x) != '}') {
+                           miniString1 += initialString1.charAt(x);
+                           x++;
+                        }
+                     }
+                     symbolArray1.push(miniString1);
+                     miniString1 = "";
+                  }
+
+                  // Clear empty array fields
+                  var filtered = symbolArray1.filter(Boolean);
+                  console.log("Filtered array = " + filtered);
+                  // End of clearing empty array fields
+
+
+                  for (var v = 0; v < filtered.length; v++) {
+                     var imgString1 = "<image class =\"symbolImg\" src=\"images/symbols/" + filtered[v] + ".svg\">";
+
+                     document.getElementById("cardText" + i).innerHTML += imgString1;
+                     console.log("newArray = " + filtered);
+                  }
+
+                  //document.getElementById("cardCost" + i).innerHTML = document.getElementById("cardCost" + i).innerHTML.replace(/[{}]/g, "");
+                  // End of Replace all the symbols for mana and tapping. 
                }
-
                // End of text bit
-
-
-
-
-
-
 
                if (data.cards[i].flavor === undefined) { document.getElementById("cardFlavour" + i).innerHTML += "This card has no flavour text"; }
                else {
