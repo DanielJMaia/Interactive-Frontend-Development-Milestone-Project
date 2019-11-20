@@ -166,37 +166,56 @@
                else {
                   document.getElementById("cardCost" + i).innerHTML += "Cost: ";
 
-
                   // Replace all the symbols for mana and tapping.
                   // Beginning of array method attempt
                   var symbolArray = [];
                   var miniString = "";
                   var initialString = data.cards[i].manaCost;
-                  for (var z = 0; z < initialString.length; z++) {
-                     if (initialString.charAt(z) == "{") {
-                        continue;
-                     } else if (initialString.charAt(z) == "}") {
-                        symbolArray.push(miniString);
-                     } else { 
-                        miniString += initialString.charAt(z);
+                  var replacedString = initialString.replace(/\//g, "");
+                  for (var z = 0; z < replacedString.length; z++) {
+                     if (replacedString.charAt(z) == '{') {
+                        z++;
+                        while (replacedString.charAt(z) != '}') {
+                           miniString += replacedString.charAt(z);
+                           z++;
+                        }
                      }
+                     //miniString.replace(/\//g, '');
+                     symbolArray.push(miniString);
+                     miniString = "";
                   }
+
                   for (var y = 0; y < symbolArray.length; y++) {
                      var imgString = "<image class =\"symbolImg\" src=\"images/symbols/" + symbolArray[y] + ".svg\">";
                      document.getElementById("cardCost" + i).innerHTML += imgString;
-                     console.log(symbolArray);
-                  } 
-                  
+                     console.log("symbolArray = " + symbolArray);
+                  }
+
+                  //document.getElementById("cardCost" + i).innerHTML = document.getElementById("cardCost" + i).innerHTML.replace(/[{}]/g, "");
+
 
 
                   // End of Replace all the symbols for mana and tapping. 
 
-
                }
                if (data.cards[i].text === undefined) { document.getElementById("cardText" + i).innerHTML += "This card has no descriptive text"; }
                else {
+
+
+                  // working on text bit
+
+
                   document.getElementById("cardText" + i).innerHTML += "Card Text: " + data.cards[i].text;
                }
+
+               // End of text bit
+
+
+
+
+
+
+
                if (data.cards[i].flavor === undefined) { document.getElementById("cardFlavour" + i).innerHTML += "This card has no flavour text"; }
                else {
                   document.getElementById("cardFlavour" + i).innerHTML += "Flavour Text: " + data.cards[i].flavor;
