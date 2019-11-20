@@ -164,43 +164,30 @@
                document.getElementById("cardType" + i).innerHTML += "Type: " + data.cards[i].type;
                if (data.cards[i].manaCost === undefined) { document.getElementById("cardCost" + i).innerHTML += "This card has no casting cost." }
                else {
+                  document.getElementById("cardCost" + i).innerHTML += "Cost: ";
 
 
                   // Replace all the symbols for mana and tapping.
                   // Beginning of array method attempt
                   var symbolArray = [];
+                  var miniString = "";
                   var initialString = data.cards[i].manaCost;
-                  //console.log("initialString value = " + initialString);
                   for (var z = 0; z < initialString.length; z++) {
                      if (initialString.charAt(z) == "{") {
-                        symbolArray.push(initialString.charAt(z + 1));
-                     }// else if (initialString.charAt(z) == "}") {
-                       // symbolArray.push(initialString.charAt(z - 1));
-                     //}
+                        continue;
+                     } else if (initialString.charAt(z) == "}") {
+                        symbolArray.push(miniString);
+                     } else { 
+                        miniString += initialString.charAt(z);
+                     }
                   }
                   for (var y = 0; y < symbolArray.length; y++) {
                      var imgString = "<image class =\"symbolImg\" src=\"images/symbols/" + symbolArray[y] + ".svg\">";
-                     document.getElementById("cardCost" + i).innerHTML += "Cost: " + imgString;
+                     document.getElementById("cardCost" + i).innerHTML += imgString;
+                     console.log(symbolArray);
                   } 
-                  console.log(symbolArray);
-                  //console.log("symbolArray value = " + symbolArray);
-                  //symbolArray.forEach(item => console.log(item));
                   
-                  
-                  
-                  // End of array method attempt
 
-                  // Alternate and ultimately failed attempt
-                  //var symbolString = initialString.substring(
-                  //   initialString.lastIndexOf("{") + 1,
-                  //   initialString.lastIndexOf("}")
-                 // );
-                 // var imgString = "<image class =\"symbolImg\" src=\"images/symbols/" + symbolString + ".svg\">";
-                  //document.getElementById("cardCost" + i).innerHTML = "Cost: " + data.cards[i].manaCost.replace(/[{symbolstring}]/g, imgString);
-                  //document.getElementById("cardCost" + i).innerHTML = "Cost: " + imgString;
-
-                  //console.log(symbolString);
-                  //console.log(imgString);
 
                   // End of Replace all the symbols for mana and tapping. 
 

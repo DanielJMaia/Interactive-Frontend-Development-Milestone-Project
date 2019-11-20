@@ -178,6 +178,7 @@ li>a {
 .symbolImg {
     height: 18px;
     width: 18px;
+    margin-right: 2px;
 }
 
 .pt-4 {
