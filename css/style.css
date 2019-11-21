@@ -12,13 +12,14 @@ a {
     color: #000;
     text-decoration: underline;
 }
+
 a:hover {
- color: #000;   
+    color: #000;
 }
 
 /*navigation*/
 
-#websiteTitle{
+#websiteTitle {
     text-decoration: none;
     font-size: 40px;
 }
@@ -45,25 +46,38 @@ li>a {
 #searchBar {
     padding: 15px 25px 50px 25px;
 }
-#randomListButton{
-        margin: auto;
-        padding-top: 25px;
-    }
+
+.searchButton {
+    margin: 0 15px 10px 0;
+}
+
 
 .navbar-brand {
     color: #DCDCDC!important
 }
 
-.navbar-dark{
+.navbar-dark {
     border-color: rgba(255, 255, 255, .4);
+}
+
+#textBoxList {
+    width: 95%;
 }
 
 /*headers*/
 
 /*body*/
 
-#additionalSearchQueries{
+#additionalSearchQueries {
     display: none;
+}
+
+#additionalFilters {
+    width: 134px;
+}
+
+#randomButton {
+    width: 134px;
 }
 
 #noResults {
@@ -102,12 +116,14 @@ li>a {
 }
 
 
-#nextClick{
+#nextClick {
     width: 85.66px;
 }
+
 #nextClick:hover {
     cursor: pointer;
 }
+
 #previousClick:hover {
     cursor: pointer;
 }
@@ -197,6 +213,7 @@ li>a {
 #gitHubLink {
     color: #dcdcdc;
 }
+
 .symbolImg {
     height: 18px;
     width: 18px;
@@ -220,18 +237,16 @@ li>a {
         padding: 15px 15px 15px 15px;
     }
 
-    
-    #searchBar {
-        max-width: 75%;
-    }
-    
+
+
+
     .cardRowClass {
         margin: 0 50px 0 50px;
     }
-    #infoDataLeft{
+    #infoDataLeft {
         border-right: 1px solid #000;
     }
-    .addedInfo{
+    .addedInfo {
         text-align: left;
     }
     .infoHeader {
@@ -241,7 +256,7 @@ li>a {
     #apiInfo {
         padding: 10px 10px 10px 10px;
     }
-   
+
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -254,9 +269,12 @@ li>a {
         margin: 0px 20px 0 auto;
     }
     #searchBar {
-        max-width: 65%;
         padding: 15px 50px 50px 50px;
     }
+    .searchButton {
+        margin: 0 15px 10px 0;
+    }
+
     .addedInfo {
         padding: 15px 10px 10px 10px;
     }
@@ -272,7 +290,7 @@ li>a {
     #apiInfo {
         padding: 15px 10px 10px 10px;
     }
-     #bodyPromotionalInfo {
+    #bodyPromotionalInfo {
         text-align: left;
     }
     #footerInfo {
@@ -307,9 +325,7 @@ li>a {
         margin-bottom: 20px;
     }
 
-    #searchBar {
-        max-width: 50%;
-    }
+
 
 }
 

@@ -25,13 +25,13 @@
             <div class="col-12" id="searchBar">
                 <ul class="navbar-nav navbar-right justify-content-center">
                     <div class="row justify-content-start">
-                        <div class="col-md-12 col-lg-2">
-                            <li class="list-inline-item" id="randomListButton">
+                        <div>
+                            <li class="list-inline-item searchButton" id="randomListButton">
                                 <button type="button" class="btn btn-dark" id="randomButton">Random!</button>
                             </li>
                         </div>
-                        <div class="col-md-12 col-lg-2">
-                            <li>
+                        <div>
+                            <li class="list-inline-item searchButton">
                                 <button type="button" class="btn btn-dark" id="additionalFilters">Filters</button>
                             </li>
                         </div>
@@ -49,10 +49,10 @@
                     <select id="legalityDropdown">
                         <option value="">All Formats</option>
                         <option value="Modern">Modern</option>
-                        <option value="Pioneer">Pioneer</option>
+                        <option value="Pauper">Pauper</option>
                         <option value="Legacy">Legacy</option>
                         <option value="Vintage">Vintage</option>
-                        <option value="Pauper">Pauper</option>
+                        <option value="Standard">Standard</option>
                         <option value="Commander">Commander</option>
                     </select>
                 </div>
@@ -77,6 +77,7 @@
                       <option value="Mythic">Mythic</option>
                     </select>
                 </div>
+                <button type="button" class="btn btn-dark" id="pressEnter">Search</button>
             </div>
         </div>
         <div id="mainBody">

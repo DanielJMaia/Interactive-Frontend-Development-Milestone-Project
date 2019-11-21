@@ -16,6 +16,35 @@
    document.getElementById("nextClick").addEventListener("click", nextPagination);
    document.getElementById("previousClick").addEventListener("click", previousPagination);
    document.getElementById("randomButton").addEventListener("click", randomCards);
+   document.getElementById("additionalFilters").addEventListener("click", showAdditionalFilters);
+   document.getElementById("pressEnter").addEventListener("click", function(){
+      grabName();
+      clearChildrenFunction();
+      document.getElementById("loader").style.display = "block";
+   });
+
+   function getData(type, cb) {
+      var request = new XMLHttpRequest();
+
+      request.open("GET", baseURL + type);
+      request.send();
+
+      request.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 200) {
+            cb(JSON.parse(this.responseText));
+         }
+      };
+   }
+
+   function showAdditionalFilters() {
+      var filterToggle = document.getElementById("additionalSearchQueries");
+      if (filterToggle.style.display == "block") {
+         filterToggle.style.display = "none";
+      }
+      else {
+         filterToggle.style.display = "block";
+      }
+   }
 
    function previousPagination() {
       if (pageNumber == 1) {
@@ -49,7 +78,7 @@
       var legalityValue = document.getElementById("legalityDropdown").value;
       var typeValue = document.getElementById("typeDropdown").value;
       var rarityValue = document.getElementById("rarityDropdown").value;
-      
+
       if (legalityValue == "" && typeValue == "" && rarityValue == "") {
          writeNameToDocument(`v1/cards?name=${nameValue}`);
       }
@@ -58,13 +87,13 @@
       }
       else if (legalityValue == "" && rarityValue == "") {
          writeNameToDocument(`v1/cards?name=${nameValue}&type=${typeValue}`);
-      }
+       }
       else if (typeValue == "" && rarityValue == "") {
          writeNameToDocument(`v1/cards?name=${nameValue}&gameFormat=${legalityValue}`);
-      }
+     }
       else if (typeValue == "") {
          writeNameToDocument(`v1/cards?name=${nameValue}&gameFormat=${legalityValue}&rarity=${rarityValue}`);
-      }
+     }
       else if (rarityValue == "") {
          writeNameToDocument(`v1/cards?name=${nameValue}&gameFormat=${legalityValue}&type=${typeValue}`);
       }
@@ -73,7 +102,7 @@
       }
       else {
          writeNameToDocument(`v1/cards?name=${nameValue}&type=${typeValue}&rarity=${rarityValue}&gameFormat=${legalityValue}`);
-      }
+     }
    }
 
    function randomCards() {
@@ -101,34 +130,21 @@
       document.getElementById("noResults").style.display = "block";
    }
 
-   function getData(type, cb) {
-      var request = new XMLHttpRequest();
-
-      request.open("GET", baseURL + type);
-      request.send();
-
-      request.onreadystatechange = function() {
-         if (this.readyState == 4 && this.status == 200) {
-            cb(JSON.parse(this.responseText));
-         }
-      };
-   }
 
    function writeNameToDocument(type) {
       // Retrieving the card data
       getData(type, function(data) {
+         console.dir(data);
          if (data.cards.length === 0) {
             noDataFunction();
          }
          else {
             document.getElementById("noResults").style.display = "none";
-
-
             for (var i = (pageNumber - 1) * 4; i <= ((pageNumber - 1) * 4) + 4 && i <= data.cards.length - 1; i++) {
 
                var cardRow = document.createElement("div");
                cardRow.setAttribute("class", "row justify-content-center cardRowClass");
-               cardRow.setAttribute("id", "cardRowId" + i);
+               cardRow.setAttribute("id", "row" + i);
                cardRow.setAttribute("align", "center");
 
                var imageDiv = document.createElement("div");
@@ -216,16 +232,19 @@
                      symbolArray.push(miniString);
                      miniString = "";
                   }
-
                   for (var y = 0; y < symbolArray.length; y++) {
                      var imgString = "<image class =\"symbolImg\" src=\"images/symbols/" + symbolArray[y] + ".svg\">";
                      document.getElementById("cardCost" + i).innerHTML += imgString;
                   }
                }
+
+
                if (data.cards[i].text === undefined) { document.getElementById("cardText" + i).innerHTML += "This card has no descriptive text"; }
-               else {
+              else {
                   document.getElementById("cardText" + i).innerHTML += "Card Text: " + data.cards[i].text;
                }
+               // End of text bit
+
                if (data.cards[i].flavor === undefined) { document.getElementById("cardFlavour" + i).innerHTML += "This card has no flavour text"; }
                else {
                   document.getElementById("cardFlavour" + i).innerHTML += "Flavour Text: " + data.cards[i].flavor;
@@ -244,7 +263,7 @@
                else {
                   document.getElementById("cardImage" + i).src = data.cards[i].imageUrl;
                }
-               document.getElementById("pagination").style.display = "flex";
+               document.getElementById("paginationId").style.display = "flex";
             }
 
             if (document.getElementById("cardData1").innerHTML === "") {
@@ -252,10 +271,9 @@
                grabName();
             }
             document.getElementById("loader").style.display = "none";
-            document.getElementById("pagination").style.display = "flex";
+            document.getElementById("paginationId").style.display = "flex";
 
          }
-
       });
    }
    

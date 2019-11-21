@@ -9,6 +9,7 @@
          event.preventDefault();
          grabName();
          clearChildrenFunction();
+         document.getElementById("loader").style.display = "block";
       }
    });
 
@@ -16,6 +17,11 @@
    document.getElementById("previousClick").addEventListener("click", previousPagination);
    document.getElementById("randomButton").addEventListener("click", randomCards);
    document.getElementById("additionalFilters").addEventListener("click", showAdditionalFilters);
+   document.getElementById("pressEnter").addEventListener("click", function(){
+      grabName();
+      clearChildrenFunction();
+      document.getElementById("loader").style.display = "block";
+   });
 
    function getData(type, cb) {
       var request = new XMLHttpRequest();
@@ -76,35 +82,35 @@
 
       if (legalityValue == "" && typeValue == "" && rarityValue == "") {
          writeNameToDocument(`v1/cards?name=${nameValue}`);
-          console.log("no additional values");
+         console.log("no additional values");
       }
       else if (legalityValue == "" && typeValue == "") {
          writeNameToDocument(`v1/cards?name=${nameValue}&rarity=${rarityValue}`);
-          console.log("rarity");
+         console.log("rarity");
       }
       else if (legalityValue == "" && rarityValue == "") {
          writeNameToDocument(`v1/cards?name=${nameValue}&type=${typeValue}`);
-          console.log("type");
+         console.log("type");
       }
       else if (typeValue == "" && rarityValue == "") {
          writeNameToDocument(`v1/cards?name=${nameValue}&gameFormat=${legalityValue}`);
-          console.log("legality");
+         console.log("legality");
       }
-      else if (typeValue == ""){
+      else if (typeValue == "") {
          writeNameToDocument(`v1/cards?name=${nameValue}&gameFormat=${legalityValue}&rarity=${rarityValue}`);
-          console.log("legality and rarity");
+         console.log("legality and rarity");
       }
-      else if (rarityValue == ""){
-       writeNameToDocument(`v1/cards?name=${nameValue}&gameFormat=${legalityValue}&type=${typeValue}`);
-        console.log("type and legality");
+      else if (rarityValue == "") {
+         writeNameToDocument(`v1/cards?name=${nameValue}&gameFormat=${legalityValue}&type=${typeValue}`);
+         console.log("type and legality");
       }
-      else if (legalityValue == ""){
-        writeNameToDocument(`v1/cards?name=${nameValue}&type=${typeValue}&rarity=${rarityValue}`);
-        console.log("type and rarity");
-    }
+      else if (legalityValue == "") {
+         writeNameToDocument(`v1/cards?name=${nameValue}&type=${typeValue}&rarity=${rarityValue}`);
+         console.log("type and rarity");
+      }
       else {
          writeNameToDocument(`v1/cards?name=${nameValue}&type=${typeValue}&rarity=${rarityValue}&gameFormat=${legalityValue}`);
-          console.log("all");
+         console.log("all");
       }
    }
 
@@ -310,7 +316,7 @@
                grabName();
             }
             document.getElementById("loader").style.display = "none";
-
+            document.getElementById("paginationId").style.display = "flex";
 
          }
       });
