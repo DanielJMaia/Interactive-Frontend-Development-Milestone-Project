@@ -1,16 +1,29 @@
-/*container & body styling*/
+/*container & entire page styling*/
 
 body {
     /* background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url("../images/background.jpg");
     background-color: #1f1f1f;
     */
-    background: radial-gradient(circle, rgb(41, 41, 41) 0%, rgba(0, 0, 0, 1) 90%);
+    background: radial-gradient(circle, rgb(45, 14, 14) 0%, rgba(0, 0, 0, 1) 90%);
     word-wrap: break-word;
+}
+
+a {
+    color: #000;
+    text-decoration: underline;
+}
+a:hover {
+ color: #000;   
 }
 
 /*navigation*/
 
-#navbar {
+#websiteTitle{
+    text-decoration: none;
+    font-size: 40px;
+}
+
+#navbarId {
     padding-bottom: 20px;
     padding-top: 20px;
     margin-top: 20px;
@@ -37,7 +50,7 @@ li>a {
     color: #DCDCDC!important
 }
 
-.navbar-dark .navbar-toggler {
+.navbar-dark{
     border-color: rgba(255, 255, 255, .4);
 }
 
@@ -52,7 +65,7 @@ li>a {
     margin-top: 10rem;
 }
 
-#slideshowImg {
+.slideshowImg {
     max-width: 100%;
     max-height: 100%;
 }
@@ -123,12 +136,13 @@ li>a {
 
 
 
-#addedInfo {
+#bodyPromotionalInfo {
     color: black;
     padding: 10px 5px 5px 5px;
     background-color: #DCDCDC;
     margin: auto;
     border-radius: 15px;
+    text-align: center;
 }
 
 #loader {
@@ -138,7 +152,7 @@ li>a {
 }
 
 
-#pagination {
+#paginationId {
     margin: 20px 0 20px 0;
     display: none;
 }
@@ -164,7 +178,7 @@ li>a {
     margin: 1rem 0 2rem 0;
 }
 
-#addedInfo {
+.addedInfo {
     margin-top: 1rem;
 }
 
@@ -202,14 +216,25 @@ li>a {
         padding: 15px 15px 15px 15px;
     }
 
-    #infoData {
-        text-align: center;
-    }
+    
     #searchBar {
         max-width: 75%;
     }
     .cardRowClass {
         margin: 0 50px 0 50px;
+    }
+    #infoDataLeft{
+        border-right: 1px solid #000;
+    }
+    .addedInfo{
+        text-align: left;
+    }
+    .infoHeader {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    #apiInfo {
+        padding: 10px 10px 10px 10px;
     }
 }
 
@@ -226,7 +251,7 @@ li>a {
         max-width: 65%;
         padding: 15px 50px 50px 50px;
     }
-    #addedInfo {
+    .addedInfo {
         padding: 15px 10px 10px 10px;
     }
     .imgClass {
@@ -238,8 +263,9 @@ li>a {
     #mainBody {
         min-height: 675px;
     }
-
-
+    #apiInfo {
+        padding: 15px 10px 10px 10px;
+    }
 }
 
 
@@ -265,7 +291,7 @@ li>a {
     #gitHubLink:hover {
         cursor: pointer;
     }
-    #navbar {
+    #navbarId {
         margin-bottom: 20px;
     }
 

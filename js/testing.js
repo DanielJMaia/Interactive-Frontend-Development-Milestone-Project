@@ -186,26 +186,25 @@
                      document.getElementById("cardCost" + i).innerHTML += imgString;
                   }
                }
+               
+               
                if (data.cards[i].text === undefined) { document.getElementById("cardText" + i).innerHTML += "This card has no descriptive text"; }
                else {
-
-
                   // working on text bit
 
-                  document.getElementById("cardText" + i).innerHTML += "Description: ";
+                  document.getElementById("cardText" + i).innerHTML = "Description: ";
 
                   // Replace all the symbols for mana and tapping.
 
                   var symbolArray1 = [];
                   var miniString1 = "";
                   var initialString1 = data.cards[i].text;
-                  console.log("Text = " + initialString1);
-                  // var replacedString1 = initialString1.replace(/\//g, "");
-                  for (var x = 0; x < initialString1.length; x++) {
-                     if (initialString1.charAt(x) == '{') {
+                  var replacedString1 = initialString1.replace(/\//g, "");
+                  for (var x = 0; x < replacedString1.length; x++) {
+                     if (replacedString1.charAt(x) == '{') {
                         x++;
-                        while (initialString1.charAt(x) != '}') {
-                           miniString1 += initialString1.charAt(x);
+                        while (replacedString1.charAt(x) != '}') {
+                           miniString1 += replacedString1.charAt(x);
                            x++;
                         }
                      }
@@ -215,19 +214,18 @@
 
                   // Clear empty array fields
                   var filtered = symbolArray1.filter(Boolean);
-                  console.log("Filtered array = " + filtered);
                   // End of clearing empty array fields
 
-
+                  document.getElementById("cardText" + i).innerHTML += data.cards[i].text;
                   for (var v = 0; v < filtered.length; v++) {
                      var imgString1 = "<image class =\"symbolImg\" src=\"images/symbols/" + filtered[v] + ".svg\">";
-
-                     document.getElementById("cardText" + i).innerHTML += imgString1;
-                     console.log("newArray = " + filtered);
+                     
+                     var replaceRegEx = document.getElementById("cardText" + i).innerHTML.replace(/\{d+\}/g, imgString1);
+                     console.log("replaceVariable = " + replaceRegEx);
+                     document.getElementById("cardText" + i).innerHTML = replaceRegEx;
+                     //document.getElementById("cardText" + i).innerHTML += imgString1;
+                     
                   }
-
-                  //document.getElementById("cardCost" + i).innerHTML = document.getElementById("cardCost" + i).innerHTML.replace(/[{}]/g, "");
-                  // End of Replace all the symbols for mana and tapping. 
                }
                // End of text bit
 
@@ -249,7 +247,7 @@
                else {
                   document.getElementById("cardImage" + i).src = data.cards[i].imageUrl;
                }
-               document.getElementById("pagination").style.display = "flex";
+               document.getElementById("paginationId").style.display = "flex";
             }
 
             if (document.getElementById("cardData1").innerHTML === "") {
