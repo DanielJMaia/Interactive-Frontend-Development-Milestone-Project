@@ -15,6 +15,7 @@
 
    document.getElementById("nextClick").addEventListener("click", nextPagination);
    document.getElementById("previousClick").addEventListener("click", previousPagination);
+   document.getElementById("randomButton").addEventListener("click", randomCards);
 
    function previousPagination() {
       if (pageNumber == 1) {
@@ -43,6 +44,12 @@
    function grabName() {
       var nameValue = document.getElementById("cardName").value;
       writeNameToDocument(`v1/cards?name=${nameValue}`);
+   }
+   function randomCards() {
+      clearChildrenFunction();
+      document.getElementById("loader").style.display = "block";
+      document.getElementById("randomButton").style.display = "none";
+      writeNameToDocument(`v1/cards?random`);
    }
 
    function clearChildrenFunction() {

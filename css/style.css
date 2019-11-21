@@ -45,6 +45,10 @@ li>a {
 #searchBar {
     padding: 15px 25px 50px 25px;
 }
+#randomListButton{
+        margin: auto;
+        padding-top: 25px;
+    }
 
 .navbar-brand {
     color: #DCDCDC!important
@@ -216,6 +220,7 @@ li>a {
     #searchBar {
         max-width: 75%;
     }
+    
     .cardRowClass {
         margin: 0 50px 0 50px;
     }

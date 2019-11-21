@@ -14,6 +14,8 @@
 
    document.getElementById("nextClick").addEventListener("click", nextPagination);
    document.getElementById("previousClick").addEventListener("click", previousPagination);
+   document.getElementById("randomButton").addEventListener("click", randomCards);
+
 
    function getData(type, cb) {
       var request = new XMLHttpRequest();
@@ -58,6 +60,13 @@
       var nameValue = document.getElementById("cardName").value;
       console.log(nameValue);
       writeNameToDocument(`v1/cards?name=${nameValue}`);
+   }
+
+   function randomCards() {
+      clearChildrenFunction();
+      document.getElementById("loader").style.display = "block";
+      document.getElementById("randomButton").style.display = "none";
+      writeNameToDocument(`v1/cards?random`);
    }
 
    function clearChildrenFunction() {
@@ -186,8 +195,8 @@
                      document.getElementById("cardCost" + i).innerHTML += imgString;
                   }
                }
-               
-               
+
+
                if (data.cards[i].text === undefined) { document.getElementById("cardText" + i).innerHTML += "This card has no descriptive text"; }
                else {
                   // working on text bit
@@ -219,12 +228,12 @@
                   document.getElementById("cardText" + i).innerHTML += data.cards[i].text;
                   for (var v = 0; v < filtered.length; v++) {
                      var imgString1 = "<image class =\"symbolImg\" src=\"images/symbols/" + filtered[v] + ".svg\">";
-                     
+
                      var replaceRegEx = document.getElementById("cardText" + i).innerHTML.replace(/\{d+\}/g, imgString1);
                      console.log("replaceVariable = " + replaceRegEx);
                      document.getElementById("cardText" + i).innerHTML = replaceRegEx;
                      //document.getElementById("cardText" + i).innerHTML += imgString1;
-                     
+
                   }
                }
                // End of text bit

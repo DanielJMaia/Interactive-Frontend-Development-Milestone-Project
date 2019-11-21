@@ -9,7 +9,7 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" type="text/css" />
-    
+
 </head>
 
 <body>
@@ -23,9 +23,12 @@
         <!-- Search Bar -->
         <div class="row justify-content-center">
             <div class="col-12" id="searchBar">
-                <ul class="navbar-nav navbar-right">
-                    <li>
+                <ul class="navbar-nav navbar-right justify-content-center">
+                    <li class="list-inline-item">
                         <input class="form-control mr-sm-2 cardSearchBar" id="cardName" type="text" autocomplete="off" placeholder="Browse Magic Cards" aria-label="Search" />
+                    </li>
+                    <li class="list-inline-item" id="randomListButton">
+                        <button type="button" class="btn btn-dark" id="randomButton">Random Cards!</button>
                     </li>
                 </ul>
             </div>
@@ -62,12 +65,13 @@
                     <div class="col-md-6" id="infoDataLeft">
                         <h5 class="infoHeader">Throne of Eldraine Ban List Released!</h1>
                             <p>The November 18 Ban List is here! Oko, Once Upon a Time and Veil of Summer banned! Read all about it <a href="https://magic.wizards.com/en/articles/archive/november-18-2019-mtga-arena-banned-announcement" target="_blank"> here.</a></p>
-                            <p>What decks are good in the new post OKO meta? Read the MTG Arena Zone article <a href="https://mtgazone.com/top-standard-decks-to-try-post-oko-ban/" target = "_blank">here.</a></p>
+                            <p>What decks are good in the new post OKO meta? Read the MTG Arena Zone article <a href="https://mtgazone.com/top-standard-decks-to-try-post-oko-ban/" target="_blank">here.</a></p>
                     </div>
                     <div class="col-md-6">
                         <h5 class="infoHeader">Esports Information!</h1>
                             <p>Read all about the Magic: The Gathering MagicFest <a href="https://magic.wizards.com/en/content/grand-prix-event-types-events" target="_blank">here.</a></p>
-                            <p>There will be Standard, Limited, Modern, Legacy and Team Limited events! #justiceforPauper. Players who achieve top finishers in each of these events are awarded Pro Points! The top 8 players, along with everyone who earns at least 39 match points in the Swiss rounds, automatically earn invitations to an upcoming <a href="https://magic.wizards.com/en/content/pro-tour-magic-event-types-events" target="_blank">Mythic Championship!</a> </p>
+                            <p>There will be Standard, Limited, Modern, Legacy and Team Limited events! #justiceforPauper. Players who achieve top finishers in each of these events are awarded Pro Points! The top 8 players, along with everyone who earns
+                                at least 39 match points in the Swiss rounds, automatically earn invitations to an upcoming <a href="https://magic.wizards.com/en/content/pro-tour-magic-event-types-events" target="_blank">Mythic Championship!</a> </p>
                     </div>
                 </div>
             </div>
@@ -119,7 +123,8 @@
                     </div>
                     <div class="col-md-4 addedInfo">
                         <h5 class="font-weight-bold">Disclaimer</h5>
-                        <p>This is a passion project done by a student as part of a Web Development course. This project is in no way assosciated with Wizards of the Coast, the developers of the Skryfall API or any official organisation related to the content displayed on this website.</p>
+                        <p>This is a passion project done by a student as part of a Web Development course. This project is in no way assosciated with Wizards of the Coast, the developers of the Skryfall API or any official organisation related to the content
+                            displayed on this website.</p>
                     </div>
                 </div>
             </div>
