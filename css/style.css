@@ -203,10 +203,6 @@ li>a {
 
 /* Small devices (landscape phones, 576px and up) */
 
-@media (min-width: 576px) {}
-
-/* Medium devices (tablets, 768px and up) */
-
 @media (min-width: 768px) {
     .imgClass {
         width: 50%;
@@ -236,6 +232,7 @@ li>a {
     #apiInfo {
         padding: 10px 10px 10px 10px;
     }
+   
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -265,6 +262,12 @@ li>a {
     }
     #apiInfo {
         padding: 15px 10px 10px 10px;
+    }
+     #bodyPromotionalInfo {
+        text-align: left;
+    }
+    #footerInfo {
+        padding: 0 10px 0 10px;
     }
 }
 
