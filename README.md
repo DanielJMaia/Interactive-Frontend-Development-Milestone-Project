@@ -8,7 +8,7 @@ This website is an easy to use way of viewing the 25 thousand or more MTG cards.
     - Collectors can see all the different versions of a card that's been released to ensure that they've got every single one. In magic the gathering, they are always releasing new cards and being able to easily see which set each version belongs too would be highly beneficial to a collector.
     - Casual players can browse different cards and determine if they'd be interested in buying any based of abilities or simply nice looking art.
     - Individuals interested in browsing various cards for the art alone can see every variation of a card, Magic has been out for nearly 30 years and has gone through a ton of art styles/artists.
-- Wireframes can be found [here](https://github.com/DanielJMaia/Interactive-Frontend-Development-Milestone-Project/issues/1#issue-526619594)
+- Wireframes can be found in the issues sections of GitHub [here](https://github.com/DanielJMaia/Interactive-Frontend-Development-Milestone-Project/issues/1#issue-526619594)
 
 ## Features
 
@@ -49,12 +49,23 @@ This website is an easy to use way of viewing the 25 thousand or more MTG cards.
 
 ## Testing
 
+### Approach to Testing
+- Planning
+    - When I began this project I knew I was going to be undertaking the most difficult Web Development project so far, and so I knew that proper testing of each feature was going to be very important. This led to several testing strategies as detailed below. 
+- Implementation
+    - First and foremost, I kept all my new code separate from my main, functining project. I had a testing.js file where I wasn't afraid to break everything in order to try new things. Once I got the very basic API call working,  testing.js became the latest copy of main.js so that I was sure that I was working properly with the data, and that when I copied the code into main.js I didn't have to adapt it significantly to work on the main project. Each new block of functionality was therefore first tested in the test file.
+    - The Chrome Dev tools were used, specifically the console.log functionality and breakpoints. Being able to log the value of variables throughought the process was fundamental in debugging the code. An example of when this was paramount was when I was replacing the values between curly brackets {} with images. There's a string variable, ministring variable, array and all those are being changed throughout the for while loop.
+- Results
+    - The result of this testing was being able pinpoint problems with the code and debug it significantly faster, instead of just changing things and hoping to find the issues. The result of using breakpoints was that I was able to work on things that are only on the page for a fraction of a second, such as the styling for the loading gif. 
+
 ### Main functionality
 
 - Testing was done by trying to break the program as best I could.
     - On the main page before a card name is typed in I ensured the carousel worked correctly, and that all the links were working.
-    - When a card name is typed in, I ensured that if the returns 0 results the user gets an error message.
-    - The appropriate mana image is replacing the symbols returned by the API.
+    - When a card name is typed in, I ensured that if the API returns 0 results the user gets an error message. This is for when a user types in a card that doesn't exist, or mistypes it.
+    - The appropriate mana image is replacing the symbols returned by the API. For example, the string {G} is properly replaced by the image of the Green mana icon.
+    - The appropriate data is filling the correspoding dynamically generated div. The description isn't being put in the Cost section and so on.
+    - If the API doesn't return a value for the specific data meant for a div, it returns a descriptive message instead of "undefined". This is key since a lot of cards in Magic don't have certain values. For example, creature type cards have power and toughness values, but Sorceries, Enchantments etc. don't.
     - Pressing previous on page 1 doesn't return an error message.
     - Pressing next on the final page loops the user back to page 1.
 
