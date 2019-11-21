@@ -45,7 +45,7 @@ This website is an easy to use way of viewing the 25 thousand or more MTG cards.
        - Replacing all the symbols for mana and special actions which are shown in the API as {G} with pictures by looping through the string, extracting characters between curly brackets and saving them as an array, then retrieving the array values and injecting them into an html string which selects the specific image I need based off that character.
        - Dynamically hiding and showing error messages, pagination, the slideshow section with the promitional information and loading gifs.
        - Pagination. The approach taken was to create 5 rows for the first 5 items in the API array, then the next 5 if next was pressed and so on. When prev and  next are pressed, the page clears the previous rows and goes back to the top.
-- Scryfall API
+- magicthegathering.io API
 
 ## Testing
 
@@ -81,7 +81,7 @@ This website is an easy to use way of viewing the 25 thousand or more MTG cards.
 - Retrieving user inputs and inserting that into the URL.
 - The initial approach was to insert the data into existing HTML, but that proved impossible. The result of trying was a single card with up to 100 names, costs, abilities, artists etc. 
 - The for loop which creates the HTML rows had some very simple parameters initially, and as a result created too many rows which ended up being big empty blocks underneath the cards. This was corrected by simply fixing the i variable parameters.
-- 
+- One of the main issues that's been present througout the entirety of the project is an access denied error. Seemingly randomly, the API call will give the error "Access to XMLHttpRequest at 'URL' has been blocked by CORS policy. No 'Access-Control-Allow-Origin' header is present on the requested resource." 
 
 ## Deployment
 
@@ -89,7 +89,7 @@ This website is an easy to use way of viewing the 25 thousand or more MTG cards.
 
 ### Content
 
-- The scryfall API was used for the data.
+- The magicthegathering.io API was used for the data.
 
 ### Media
 
@@ -100,5 +100,6 @@ This website is an easy to use way of viewing the 25 thousand or more MTG cards.
    - Throne of Eldraine promo image found [here](https://www.google.com/search?sxsrf=ACYBGNRKcjma37Zoaso3MXVUemPWnQeawA:1574342832177&q=mtg+throne+of+eldraine&tbm=isch&tbs=simg:CAQSkwEJYt94JYYWeCkahwELEKjU2AQaAAwLELCMpwgaYgpgCAMSKO0W_1wutGb8M7xefGZUZ7haWBOsW8iPPLM4sqyHFJoQ66Cm3IcMm0yYaMDUtFWHQyFpLX52pnWwuxI-cBl9oIAzJbxhEt8I2bHrecyRGikPps9ZR9LrReNNf7SAEDAsQjq7-CBoKCggIARIEmVyy2ww&sa=X&ved=2ahUKEwie05CKtPvlAhUPUcAKHcNwBKMQwg4oAHoECAQQKA&biw=1920&bih=937)
  
 ### Acknowledgements
-- Antonija Simic
-- Tutors Stephen, Kevin
+- Thank you to my mentor, Antonija Simic
+- Thank you to the tutors Stephen and Kevin for helping me out with the more challenging aspects of the project.
+- I'd also like to thank the team over at magicthegathering.io for creating this API and making it available to the public.

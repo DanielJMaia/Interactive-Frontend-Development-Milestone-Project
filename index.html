@@ -27,10 +27,45 @@
                     <li class="list-inline-item">
                         <input class="form-control mr-sm-2 cardSearchBar" id="cardName" type="text" autocomplete="off" placeholder="Browse Magic Cards" aria-label="Search" />
                     </li>
+                    <button type="button" class="btn btn-dark" id="additionalFilters">Show Additional Filters</button>
+
                     <li class="list-inline-item" id="randomListButton">
                         <button type="button" class="btn btn-dark" id="randomButton">Random Cards!</button>
                     </li>
                 </ul>
+            </div>
+            <div class="col-12" id="additionalSearchQueries">
+                <div>
+                    <select id="legalityDropdown">
+                        <option value="" selected disabled hidden>Choose the Format</option>
+                        <option value="Modern">Modern</option>
+                        <option value="Pioneer">Pioneer</option>
+                        <option value="Legacy">Legacy</option>
+                        <option value="Vintage">Vintage</option>
+                        <option value="Pauper">Pauper</option>
+                    </select>
+                </div>
+                <div>
+                    <select id="typeDropdown">
+                        <option value="" selected disabled hidden>Choose the Type</option>
+                        <option value="Land">Land</option>
+                        <option value="Instant">Instant</option>
+                        <option value="Sorcery">Sorcery</a></option>
+                        <option value="Enchantment">Enchantment</option>
+                        <option value="Planeswalker">Planeswalker</option>
+                        <option value="Creature">Creature</option>
+                        <option value="Artifact">Artifact</option>
+                    </select>
+                </div>
+                <div>
+                    <select id="rarityDropdown">
+                        <option value="" selected disabled hidden>Choose the Rarity</option>
+                      <option value="Common">Common</option>
+                      <option value="Uncommon">Uncommon</option>
+                      <option value="Rare">Rare</option>
+                      <option value="Mythic">Mythic</option>
+                    </select>
+                </div>
             </div>
         </div>
         <div id="mainBody">

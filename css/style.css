@@ -62,6 +62,10 @@ li>a {
 
 /*body*/
 
+#additionalSearchQueries{
+    display: none;
+}
+
 #noResults {
     display: none;
     color: #DCDCDC;
