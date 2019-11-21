@@ -24,30 +24,41 @@
         <div class="row justify-content-center">
             <div class="col-12" id="searchBar">
                 <ul class="navbar-nav navbar-right justify-content-center">
-                    <li class="list-inline-item">
-                        <input class="form-control mr-sm-2 cardSearchBar" id="cardName" type="text" autocomplete="off" placeholder="Browse Magic Cards" aria-label="Search" />
-                    </li>
-                    <button type="button" class="btn btn-dark" id="additionalFilters">Show Additional Filters</button>
-
-                    <li class="list-inline-item" id="randomListButton">
-                        <button type="button" class="btn btn-dark" id="randomButton">Random Cards!</button>
-                    </li>
+                    <div class="row justify-content-start">
+                        <div class="col-md-12 col-lg-2">
+                            <li class="list-inline-item" id="randomListButton">
+                                <button type="button" class="btn btn-dark" id="randomButton">Random!</button>
+                            </li>
+                        </div>
+                        <div class="col-md-12 col-lg-2">
+                            <li>
+                                <button type="button" class="btn btn-dark" id="additionalFilters">Filters</button>
+                            </li>
+                        </div>
+                        <div class="col-md-12 col-lg-8">
+                            <li class="list-inline-item" id="textBoxList">
+                                <input class="form-control mr-sm-2 cardSearchBar" id="cardName" type="text" placeholder="Browse Magic Cards" aria-label="Search" autocomplete="off" />
+                            </li>
+                        </div>
+                    </div>
+                    
                 </ul>
             </div>
             <div class="col-12" id="additionalSearchQueries">
                 <div>
                     <select id="legalityDropdown">
-                        <option value="" selected disabled hidden>Choose the Format</option>
+                        <option value="">All Formats</option>
                         <option value="Modern">Modern</option>
                         <option value="Pioneer">Pioneer</option>
                         <option value="Legacy">Legacy</option>
                         <option value="Vintage">Vintage</option>
                         <option value="Pauper">Pauper</option>
+                        <option value="Commander">Commander</option>
                     </select>
                 </div>
                 <div>
                     <select id="typeDropdown">
-                        <option value="" selected disabled hidden>Choose the Type</option>
+                        <option value="">All Types</option>
                         <option value="Land">Land</option>
                         <option value="Instant">Instant</option>
                         <option value="Sorcery">Sorcery</a></option>
@@ -59,7 +70,7 @@
                 </div>
                 <div>
                     <select id="rarityDropdown">
-                        <option value="" selected disabled hidden>Choose the Rarity</option>
+                        <option value="">All Rarities</option>
                       <option value="Common">Common</option>
                       <option value="Uncommon">Uncommon</option>
                       <option value="Rare">Rare</option>
@@ -170,7 +181,7 @@
     </div>
 
 </body>
-<script type="text/javascript" src="js/testing.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
