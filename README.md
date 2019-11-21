@@ -8,7 +8,7 @@ This website is an easy to use way of viewing the 25 thousand or more MTG cards.
     - Collectors can see all the different versions of a card that's been released to ensure that they've got every single one. In magic the gathering, they are always releasing new cards and being able to easily see which set each version belongs too would be highly beneficial to a collector.
     - Casual players can browse different cards and determine if they'd be interested in buying any based of abilities or simply nice looking art.
     - Individuals interested in browsing various cards for the art alone can see every variation of a card, Magic has been out for nearly 30 years and has gone through a ton of art styles/artists.
-*INSERT WIREFRAMES & MOCKUPS HERE
+- Wireframes can be found [here](https://github.com/DanielJMaia/Interactive-Frontend-Development-Milestone-Project/issues/1#issue-526619594)
 
 ## Features
 
@@ -84,7 +84,10 @@ This website is an easy to use way of viewing the 25 thousand or more MTG cards.
 
 - The icons were taken from here https://mtg.gamepedia.com/Category:Mana_symbols
 - Carousel images were retrieved from 
-- 
+   - Core Set 2020 found [here](https://www.google.com/search?sxsrf=ACYBGNQ7YUfVBvn6q4me9Y4izIHFbJINQg:1574342826995&q=magic+the+gathering+core+set+2020&tbm=isch&tbs=simg:CAQSkwEJ1ayOcbM_1T2IahwELEKjU2AQaAAwLELCMpwgaYgpgCAMSKJAX-haKEZEXiRH3Fo0RgBeNF4UM8iPzI_1Aj4yHxI-oo5Cj1IboshSAaMBhvBB3u293vpQ9BllsqIJ4QvRVKela--XVTsSJO6riYR-zUNhiFhiBqRfI7pwIzKCAEDAsQjq7-CBoKCggIARIEVleO7Aw&sa=X&ved=2ahUKEwj8qdSHtPvlAhXFQUEAHYA5ARUQwg4oAHoECAgQKA&biw=1920&bih=937)
+   - FNM Chaos Draft placeholder image found [here](https://firstplayer.nu/event/friday-night-magic-2018-12-28/)
+   - Throne of Eldraine promo image found [here](https://www.google.com/search?sxsrf=ACYBGNRKcjma37Zoaso3MXVUemPWnQeawA:1574342832177&q=mtg+throne+of+eldraine&tbm=isch&tbs=simg:CAQSkwEJYt94JYYWeCkahwELEKjU2AQaAAwLELCMpwgaYgpgCAMSKO0W_1wutGb8M7xefGZUZ7haWBOsW8iPPLM4sqyHFJoQ66Cm3IcMm0yYaMDUtFWHQyFpLX52pnWwuxI-cBl9oIAzJbxhEt8I2bHrecyRGikPps9ZR9LrReNNf7SAEDAsQjq7-CBoKCggIARIEmVyy2ww&sa=X&ved=2ahUKEwie05CKtPvlAhUPUcAKHcNwBKMQwg4oAHoECAQQKA&biw=1920&bih=937)
+ 
 ### Acknowledgements
 - Antonija Simic
 - Tutors Stephen, Kevin
