@@ -15,7 +15,7 @@
 
    document.getElementById("nextClick").addEventListener("click", nextPagination);
    document.getElementById("previousClick").addEventListener("click", previousPagination);
-   document.getElementById("randomButton").addEventListener("click", randomCards);
+   document.getElementById("randomListButton").addEventListener("click", randomCards);
    document.getElementById("additionalFilters").addEventListener("click", showAdditionalFilters);
    document.getElementById("pressEnter").addEventListener("click", function(){
       grabName();
@@ -36,15 +36,21 @@
       };
    }
 
+ 
+   
    function showAdditionalFilters() {
       var filterToggle = document.getElementById("additionalSearchQueries");
-      if (filterToggle.style.display == "block") {
+      if (filterToggle.style.display == "none" && screen.width <= 750){
+         filterToggle.style.display = "block";
+         console.log("Small screens");
+      } else if (filterToggle.style.display == "none" && screen.width > 750) {
+         filterToggle.style.display = "flex";
+         console.log("large screens");
+      } else {
          filterToggle.style.display = "none";
       }
-      else {
-         filterToggle.style.display = "block";
-      }
    }
+   
 
    function previousPagination() {
       if (pageNumber == 1) {
@@ -117,7 +123,6 @@
    function randomCards() {
       clearChildrenFunction();
       document.getElementById("loader").style.display = "block";
-      document.getElementById("randomButton").style.display = "none";
       writeNameToDocument(`v1/cards?random`);
    }
 

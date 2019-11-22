@@ -134,7 +134,6 @@
    function writeNameToDocument(type) {
       // Retrieving the card data
       getData(type, function(data) {
-         console.dir(data);
          if (data.cards.length === 0) {
             noDataFunction();
          }
