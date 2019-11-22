@@ -68,7 +68,7 @@ li>a {
 
 /*body*/
 
-#additionalFilterRow{
+#additionalFilterRow {
     margin: 15px auto 15px auto;
 }
 
@@ -80,8 +80,8 @@ li>a {
     min-width: 150px;
 }
 
-#pressEnter{
-    margin-top: 10px;
+#pressEnter {
+    margin-top: 20px;
 }
 
 
@@ -117,7 +117,6 @@ li>a {
     border-bottom: 2px solid #000;
     background-color: #dcdcdc;
     border-radius: 10px;
-
 }
 
 
@@ -163,7 +162,15 @@ li>a {
     border-radius: 5px;
 }
 
-.dropdownButton{
+.selectDropdown {
+    border-radius: 3px;
+    font-weight: 400;
+    padding: 10px 15px 10px 20px;
+    width: 150px;
+}
+
+
+.dropdownButton {
     padding: 15px 10px 15px 15px;
 }
 
