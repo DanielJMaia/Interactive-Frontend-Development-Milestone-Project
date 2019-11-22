@@ -15,7 +15,7 @@
 
    document.getElementById("nextClick").addEventListener("click", nextPagination);
    document.getElementById("previousClick").addEventListener("click", previousPagination);
-   document.getElementById("randomButton").addEventListener("click", randomCards);
+   document.getElementById("randomListButton").addEventListener("click", randomCards);
    document.getElementById("additionalFilters").addEventListener("click", showAdditionalFilters);
    document.getElementById("pressEnter").addEventListener("click", function(){
       grabName();
@@ -36,15 +36,19 @@
       };
    }
 
+ 
+   
    function showAdditionalFilters() {
       var filterToggle = document.getElementById("additionalSearchQueries");
-      if (filterToggle.style.display == "block") {
+      if (filterToggle.style.display == "none" && screen.width <= 750){
+         filterToggle.style.display = "block";
+      } else if (filterToggle.style.display == "none" && screen.width > 750) {
+         filterToggle.style.display = "flex";
+      } else {
          filterToggle.style.display = "none";
       }
-      else {
-         filterToggle.style.display = "block";
-      }
    }
+   
 
    function previousPagination() {
       if (pageNumber == 1) {
@@ -78,6 +82,7 @@
       var legalityValue = document.getElementById("legalityDropdown").value;
       var typeValue = document.getElementById("typeDropdown").value;
       var rarityValue = document.getElementById("rarityDropdown").value;
+     
 
       if (legalityValue == "" && typeValue == "" && rarityValue == "") {
          writeNameToDocument(`v1/cards?name=${nameValue}`);
@@ -87,28 +92,27 @@
       }
       else if (legalityValue == "" && rarityValue == "") {
          writeNameToDocument(`v1/cards?name=${nameValue}&type=${typeValue}`);
-       }
+      }
       else if (typeValue == "" && rarityValue == "") {
          writeNameToDocument(`v1/cards?name=${nameValue}&gameFormat=${legalityValue}`);
-     }
+      }
       else if (typeValue == "") {
          writeNameToDocument(`v1/cards?name=${nameValue}&gameFormat=${legalityValue}&rarity=${rarityValue}`);
-     }
+      }
       else if (rarityValue == "") {
          writeNameToDocument(`v1/cards?name=${nameValue}&gameFormat=${legalityValue}&type=${typeValue}`);
-      }
+     }
       else if (legalityValue == "") {
          writeNameToDocument(`v1/cards?name=${nameValue}&type=${typeValue}&rarity=${rarityValue}`);
-      }
+     }
       else {
          writeNameToDocument(`v1/cards?name=${nameValue}&type=${typeValue}&rarity=${rarityValue}&gameFormat=${legalityValue}`);
-     }
+      }
    }
 
    function randomCards() {
       clearChildrenFunction();
       document.getElementById("loader").style.display = "block";
-      document.getElementById("randomButton").style.display = "none";
       writeNameToDocument(`v1/cards?random`);
    }
 
@@ -239,8 +243,8 @@
 
 
                if (data.cards[i].text === undefined) { document.getElementById("cardText" + i).innerHTML += "This card has no descriptive text"; }
-              else {
-                  document.getElementById("cardText" + i).innerHTML += "Card Text: " + data.cards[i].text;
+               else {
+                  document.getElementById("cardFlavour" + i).innerHTML += "Flavour Text: " + data.cards[i].flavor;
                }
                // End of text bit
 
