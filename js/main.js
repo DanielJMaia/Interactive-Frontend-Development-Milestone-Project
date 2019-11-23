@@ -143,7 +143,7 @@
          }
          else {
             document.getElementById("noResults").style.display = "none";
-            for (var i = (pageNumber - 1) * 4; i <= ((pageNumber - 1) * 4) + 4 && i <= data.cards.length - 1; i++) {
+            for (var i = (pageNumber - 1) * 5; i <= ((pageNumber - 1) * 4) + 4 && i <= data.cards.length - 1; i++) {
 
                var cardRow = document.createElement("div");
                cardRow.setAttribute("class", "row justify-content-center cardRowClass");

@@ -63,11 +63,6 @@ li>a {
 #textBoxList {
     width: 95%;
 }
-
-/*headers*/
-
-/*body*/
-
 #additionalFilterRow {
     margin: 15px auto 15px auto;
 }
@@ -78,12 +73,29 @@ li>a {
 
 .btn {
     min-width: 150px;
+    background-color: #000;
+}
+.btn:hover {
+    background-color: #100404;
 }
 
 #pressEnter {
     margin-top: 20px;
 }
+.selectDropdown {
+    border-radius: 3px;
+    font-weight: 400;
+    padding: 10px 15px 10px 20px;
+    width: 150px;
+}
 
+
+.dropdownButton {
+    padding: 15px 10px 15px 15px;
+}
+/*headers*/
+
+/*body*/
 
 #noResults {
     display: none;
@@ -162,17 +174,6 @@ li>a {
     border-radius: 5px;
 }
 
-.selectDropdown {
-    border-radius: 3px;
-    font-weight: 400;
-    padding: 10px 15px 10px 20px;
-    width: 150px;
-}
-
-
-.dropdownButton {
-    padding: 15px 10px 15px 15px;
-}
 
 #bodyPromotionalInfo {
     color: black;
@@ -251,9 +252,6 @@ li>a {
         padding: 15px 15px 15px 15px;
     }
 
-
-
-
     .cardRowClass {
         margin: 0 50px 0 50px;
     }
@@ -276,9 +274,6 @@ li>a {
 /* Large devices (desktops, 992px and up) */
 
 @media (min-width: 992px) {
-    .quick-access-content {
-        padding: 20px;
-    }
     .card-body {
         margin: 0px 20px 0 auto;
     }
@@ -327,7 +322,9 @@ li>a {
     li>a:hover {
         color: #A9A9A9;
     }
-
+   #navbarId {
+        margin-bottom: 20px;
+    } 
     #ApiLink:hover {
         cursor: pointer;
     }
@@ -335,12 +332,6 @@ li>a {
     #gitHubLink:hover {
         cursor: pointer;
     }
-    #navbarId {
-        margin-bottom: 20px;
-    }
-
-
-
 }
 
 /* Extra large devices (large desktops, Monitors, TV's, 1920px and up) */
