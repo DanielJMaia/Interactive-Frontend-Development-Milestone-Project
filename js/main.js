@@ -17,7 +17,7 @@
    document.getElementById("previousClick").addEventListener("click", previousPagination);
    document.getElementById("randomListButton").addEventListener("click", randomCards);
    document.getElementById("additionalFilters").addEventListener("click", showAdditionalFilters);
-   document.getElementById("pressEnter").addEventListener("click", function(){
+   document.getElementById("pressEnter").addEventListener("click", function() {
       grabName();
       clearChildrenFunction();
       document.getElementById("loader").style.display = "block";
@@ -36,19 +36,21 @@
       };
    }
 
- 
-   
+
+
    function showAdditionalFilters() {
       var filterToggle = document.getElementById("additionalSearchQueries");
-      if (filterToggle.style.display == "none" && screen.width <= 750){
+      if (filterToggle.style.display == "none" && screen.width <= 750) {
          filterToggle.style.display = "block";
-      } else if (filterToggle.style.display == "none" && screen.width > 750) {
+      }
+      else if (filterToggle.style.display == "none" && screen.width > 750) {
          filterToggle.style.display = "flex";
-      } else {
+      }
+      else {
          filterToggle.style.display = "none";
       }
    }
-   
+
 
    function previousPagination() {
       if (pageNumber == 1) {
@@ -82,7 +84,7 @@
       var legalityValue = document.getElementById("legalityDropdown").value;
       var typeValue = document.getElementById("typeDropdown").value;
       var rarityValue = document.getElementById("rarityDropdown").value;
-     
+
 
       if (legalityValue == "" && typeValue == "" && rarityValue == "") {
          writeNameToDocument(`v1/cards?name=${nameValue}`);
@@ -101,10 +103,10 @@
       }
       else if (rarityValue == "") {
          writeNameToDocument(`v1/cards?name=${nameValue}&gameFormat=${legalityValue}&type=${typeValue}`);
-     }
+      }
       else if (legalityValue == "") {
          writeNameToDocument(`v1/cards?name=${nameValue}&type=${typeValue}&rarity=${rarityValue}`);
-     }
+      }
       else {
          writeNameToDocument(`v1/cards?name=${nameValue}&type=${typeValue}&rarity=${rarityValue}&gameFormat=${legalityValue}`);
       }
@@ -138,6 +140,7 @@
    function writeNameToDocument(type) {
       // Retrieving the card data
       getData(type, function(data) {
+         console.dir(data);
          if (data.cards.length === 0) {
             noDataFunction();
          }
@@ -219,7 +222,7 @@
                if (data.cards[i].manaCost === undefined) { document.getElementById("cardCost" + i).innerHTML += "This card has no casting cost." }
                else {
                   document.getElementById("cardCost" + i).innerHTML += "Cost: ";
-                  // Replace all the symbols for mana and tapping.
+                  // The following code replaces all the symbols for mana and tapping.
                   var symbolArray = [];
                   var miniString = "";
                   var initialString = data.cards[i].manaCost;
@@ -236,18 +239,14 @@
                      miniString = "";
                   }
                   for (var y = 0; y < symbolArray.length; y++) {
-                     var imgString = "<image class =\"symbolImg\" src=\"images/symbols/" + symbolArray[y] + ".svg\">";
+                     var imgString = "<img class =\"symbolImg\" src=\"images/symbols/" + symbolArray[y] + ".svg\">";
                      document.getElementById("cardCost" + i).innerHTML += imgString;
                   }
                }
-
-
                if (data.cards[i].text === undefined) { document.getElementById("cardText" + i).innerHTML += "This card has no descriptive text"; }
                else {
-                  document.getElementById("cardFlavour" + i).innerHTML += "Flavour Text: " + data.cards[i].flavor;
+                  document.getElementById("cardText" + i).innerHTML += "Card Text: " + data.cards[i].text;
                }
-               // End of text bit
-
                if (data.cards[i].flavor === undefined) { document.getElementById("cardFlavour" + i).innerHTML += "This card has no flavour text"; }
                else {
                   document.getElementById("cardFlavour" + i).innerHTML += "Flavour Text: " + data.cards[i].flavor;

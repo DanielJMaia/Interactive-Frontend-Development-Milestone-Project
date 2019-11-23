@@ -14,12 +14,9 @@
 
 <body>
     <div class="container-fluid" id="mainContainer">
-        <!-- Navigation Menu -->
-
         <nav class="navbar navbar-dark" id="navbarId">
             <a class="navbar-brand" href="index.html" id="websiteTitle">Magic Discoverer</a>
         </nav>
-        <!-- Search Bar -->
         <div class="row justify-content-center">
             <div class="col-8" id="searchBar">
                 <ul class="navbar-nav navbar-right justify-content-center">
@@ -30,12 +27,13 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <li class="list-inline-item searchButton" id="randomListButton">
-                <button type="button" class="btn btn-dark">Random!</button>
-            </li>
-            <li class="list-inline-item searchButton" id="additionalFilters">
-                <button type="button" class="btn btn-dark">Show Filters</button>
-            </li>
+            <ul id="additionalFunctionalityButtons">
+                <li class="list-inline-item searchButton" id="randomListButton">
+                    <button type="button" class="btn btn-dark">Random!</button>
+                </li>
+                <li class="list-inline-item searchButton" id="additionalFilters">
+                    <button type="button" class="btn btn-dark">Show Filters</button>
+                </li>
             </ul>
         </div>
         <div class="row justify-content-center" id="additionalFilterRow">
@@ -78,9 +76,7 @@
             </div>
         </div>
         <div id="mainBody">
-            <!-- Search Results -->
             <div class="col-sm-12" id="cardData">
-                <!-- Placeholder Carousel -->
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -108,14 +104,14 @@
                 <div class="row" id="bodyPromotionalInfo">
                     <div class="col-md-6" id="infoDataLeft">
                         <h5 class="infoHeader">Throne of Eldraine Ban List Released!</h5>
-                            <p>The November 18 Ban List is here! Oko, Once Upon a Time and Veil of Summer banned! Read all about it <a href="https://magic.wizards.com/en/articles/archive/november-18-2019-mtga-arena-banned-announcement" target="_blank"> here.</a></p>
-                            <p>What decks are good in the new post OKO meta? Read the MTG Arena Zone article <a href="https://mtgazone.com/top-standard-decks-to-try-post-oko-ban/" target="_blank">here.</a></p>
+                        <p>The November 18 Ban List is here! Oko, Once Upon a Time and Veil of Summer banned! Read all about it <a href="https://magic.wizards.com/en/articles/archive/november-18-2019-mtga-arena-banned-announcement" target="_blank"> here.</a></p>
+                        <p>What decks are good in the new post OKO meta? Read the MTG Arena Zone article <a href="https://mtgazone.com/top-standard-decks-to-try-post-oko-ban/" target="_blank">here.</a></p>
                     </div>
                     <div class="col-md-6">
                         <h5 class="infoHeader">Esports Information!</h5>
-                            <p>Read all about the Magic: The Gathering MagicFest <a href="https://magic.wizards.com/en/content/grand-prix-event-types-events" target="_blank">here.</a></p>
-                            <p>There will be Standard, Limited, Modern, Legacy and Team Limited events! #justiceforPauper. Players who achieve top finishers in each of these events are awarded Pro Points! The top 8 players, along with everyone who earns
-                                at least 39 match points in the Swiss rounds, automatically earn invitations to an upcoming <a href="https://magic.wizards.com/en/content/pro-tour-magic-event-types-events" target="_blank">Mythic Championship!</a> </p>
+                        <p>Read all about the Magic: The Gathering MagicFest <a href="https://magic.wizards.com/en/content/grand-prix-event-types-events" target="_blank">here.</a></p>
+                        <p>There will be Standard, Limited, Modern, Legacy and Team Limited events! #justiceforPauper. Players who achieve top finishers in each of these events are awarded Pro Points! The top 8 players, along with everyone who earns at least
+                            39 match points in the Swiss rounds, automatically earn invitations to an upcoming <a href="https://magic.wizards.com/en/content/pro-tour-magic-event-types-events" target="_blank">Mythic Championship!</a> </p>
                     </div>
                 </div>
             </div>
@@ -178,8 +174,10 @@
         </footer>
     </div>
 </body>
-<script type="text/javascript" src="js/main.js"></script>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
 </html>

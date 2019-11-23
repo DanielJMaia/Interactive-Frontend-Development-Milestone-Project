@@ -4,7 +4,7 @@ body {
     /* background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url("../images/background.jpg");
     background-color: #1f1f1f;
     */
-    background: radial-gradient(circle, rgb(45, 14, 14) 0%, rgba(0, 0, 0, 1) 90%);
+    background-image: radial-gradient(circle, rgb(45, 14, 14) 0%, rgba(0, 0, 0, 1) 90%);
     word-wrap: break-word;
 }
 
@@ -46,12 +46,9 @@ li>a {
 #searchBar {
     padding: 15px 0 25px 0;
 }
-
-.searchButton {
-    margin: 0 15px 10px 0;
+#additionalFunctionalityButtons{
+    padding: 0;
 }
-
-
 .navbar-brand {
     color: #DCDCDC!important
 }
@@ -60,9 +57,6 @@ li>a {
     border-color: rgba(255, 255, 255, .4);
 }
 
-#textBoxList {
-    width: 95%;
-}
 #additionalFilterRow {
     margin: 15px auto 15px auto;
 }
