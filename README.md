@@ -11,10 +11,10 @@ This website is an easy to use way of viewing the 25 thousand or more MTG cards.
     - Individuals interested in browsing various cards for the art alone can see every variation of a card, Magic has been out for nearly 30 years and has gone through a ton of art styles/artists.
 - Initial wireframes can be found in the issues sections of GitHub [here](https://github.com/DanielJMaia/Interactive-Frontend-Development-Milestone-Project/issues/1#issue-526619594)
     - Final Look 
-        - Desktop 1080p:
-        - Desktop 1440p:
-        - Tablet:
-        - Mobile:
+        - Desktop 1080p: [screenshots](https://github.com/DanielJMaia/Interactive-Frontend-Development-Milestone-Project/issues/2)
+        - Desktop 1440p: [screenshots](https://github.com/DanielJMaia/Interactive-Frontend-Development-Milestone-Project/issues/3)
+        - Tablet: [screenshots](https://github.com/DanielJMaia/Interactive-Frontend-Development-Milestone-Project/issues/5)
+        - Mobile: [screenshots](https://github.com/DanielJMaia/Interactive-Frontend-Development-Milestone-Project/issues/4)
 
 ## Features
 
